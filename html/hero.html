@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav
+    class="flex justify-between h-16 items-center bg-white fixed z-30 top-0 left-0 w-full px-10 md:px-8 lg:px-20 shadow-sm"
+  >
+    <!-- logoArea -->
+    <div class="h-12 w-20">
+      <img class="h-12 w-20" src="../Img/Logo/Mosaic Logo.png" alt="" />
+    </div>
+    <!-- tabArea -->
+    <div
+      id="navTabs"
+      class="flex text-center white md:bg-transparent z-0 md:z-10 absolute top-16 duration-500 left-[-100vw] md:static w-72 h-screen md:h-auto bg-white md:w-auto flex-col md:flex-row md:gap-[4vw] gap-[8vw] py-[2vw] md:py-0 font-poppins font-medium text-base select-none shadow-2xl md:shadow-none"
+    >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          Home
+        </div></a
+      >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          Teachers
+        </div></a
+      >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          About us
+        </div></a
+      >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          FAQs
+        </div></a
+      >
+      <a class="mx-auto md:mx-0" href="#"
+        ><div
+          class="bg-[#3461FF] h-12 w-32 leading-[3rem] text-white rounded-full"
+        >
+          Book a call
+        </div></a
+      >
+    </div>
+    <div class="md:hidden">
+      <i
+        class="fa-solid fa-bars text-lg cursor-pointer"
+        onclick="menuToggleBtn(this)"
+      ></i>
+    </div>
+  </nav>
+    <header class="mt-16" >
+        <button id="openFilter" class="relative flex items-center border-t-0 mx-auto sm:mx-0 sm:ml-16 justify-between h-8 w-32 px-4 rounded-br-md rounded-bl-md border-2 border-[#f1f1f1] text-lg z-0" >Filter 
+            <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 16.88C11.04 17.18 10.94 17.5 10.71 17.71C10.32 18.1 9.68998 18.1 9.29998 17.71L5.28998 13.7C5.05998 13.47 4.95998 13.16 4.99998 12.87V7.75L0.20998 1.62C-0.13002 1.19 -0.0500202 0.56 0.37998 0.22C0.56998 0.08 0.77998 0 0.99998 0H15C15.22 0 15.43 0.08 15.62 0.22C16.05 0.56 16.13 1.19 15.79 1.62L11 7.75V16.88ZM3.03998 2L6.99998 7.06V12.58L8.99998 14.58V7.05L12.96 2H3.03998Z" fill="black"/>
+            </svg></button>
+        <aside id="filterArea" class="bg-white fixed -left-96 top-16 border-r-2 z-10 duration-500 shadow-md h-[calc(100vh-4rem)] w-64 px-4 " >
+            <section class=" flex justify-between items-center my-8 text-center text-2xl font-medium" >
+                Filter
+                <i id="closeFilter" class="fa-solid fa-xmark cursor-pointer"></i>
+            </section>
+            <section>
+                <h1  class="text-xl" >Search Teacher:</h1>
+                <input type="search" class="border-2 rounded-full border-[#f1f1f1] w-full h-8 px-2 outline-none focus:border-blue-400" name="" id="">   
+            </section>
+            <section class="relative mt-16 select-none">
+                <h1 id="classToggler" class="z-0 cursor-pointer border-2 flex justify-between py-1 px-2 border-[#f1f1f1] items-center" >Class <i id="classArrow" class="fa-solid fa-chevron-down"></i></h1>
+                <ul id="classDropdown" class=" z-10 hidden w-full absolute top-10  text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg h-40 overflow-auto">
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-license" type="radio" value="" name="list-class" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">Driver License </label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-id" type="radio" value="" name="list-class" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">State ID</label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-millitary" type="radio" value="" name="list-class" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-millitary" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">US Millitary</label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-passport" type="radio" value="" name="list-class" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-passport" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">US Passport</label>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="relative mt-16 select-none">
+                <h1 id="localityToggler" class=" z-0 cursor-pointer border-2 py-1 flex justify-between px-2 border-[#f1f1f1] items-center" >Locality <i id="localityArrow" class="fa-solid fa-chevron-down"></i></h1>
+                <ul id="localityDropdown" class=" z-10 hidden w-full absolute top-10  text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg h-40 overflow-auto">
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-license" type="radio" value="" name="list-locality" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">Driver License </label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-id" type="radio" value="" name="list-locality" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">State ID</label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-millitary" type="radio" value="" name="list-locality" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-millitary" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">US Millitary</label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-passport" type="radio" value="" name="list-locality" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-passport" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">US Passport</label>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="relative mt-16 select-none ">
+                <h1 id="subjectToggler" class="flex justify-between items-center z-0 cursor-pointer border-2 py-1 px-2 border-[#f1f1f1]" >Subject <i id="subjectArrow" class="fa-solid fa-chevron-down"></i></h1>
+                
+                <ul id="subjectDropdown" class=" z-10 hidden w-full absolute top-10  text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg h-40 overflow-auto">
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-license" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-license" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">Driver License </label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">State ID</label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-millitary" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-millitary" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">US Millitary</label>
+                        </div>
+                    </li>
+                    <li class="w-full border-b border-gray-200 rounded-t-lg ">
+                        <div class="flex items-center pl-3">
+                            <input id="list-radio-passport" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 ">
+                            <label for="list-radio-passport" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 ">US Passport</label>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        
+        </aside>
+    </header> 
+    <!-- card holding container main body  -->
+    <main class=" mt-8 p-0 sm:px-8 justify-center items-center w-full grid gap-8  xl:grid-cols-3 lg:grid-cols-2 grid-cols-1" >
+
+        <!-- cards -->
+        <section class="mx-auto relative sm:w-96 w-auto  rounded-2xl shadow-lg border-t-2 border-black/20 py-8">
+          
+            <!-- profile image area with absolute property -->
+            <div class="px-4 h-20 w-full p-1 bg-white rounded-full flex ">
+              <img  class=" w-[4.5rem] h-[4.5rem] rounded-full" src="../Img/Teacher card photos/user.png" alt="" draggable="false">
+              <span>
+                <heading class=" block px-4 font-semibold text-2xl">Lisa Daniel</heading>
+                <!------------------- subject Names -------------------->
+                <h1 class="px-4 text-black/60 mt-2">English, Mathematics
+  
+                </h1>
+              </span>
+            </div>
+            <!-- Teacher Name -->
+            
+            <!--------------- Tags area ---------------------------->
+            <div class="px-4 flex gap-2 mt-3">
+              <!-- tag 1 is for experience -->
+              <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">4 years</tag>
+              <!-- tag 2 is for class -->
+              <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Class VII</tag>
+              <!-- tag 3 is for degree -->
+              <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Graduated</tag>
+  
+            </div>
+            <!---------------------- connect button --------------------->
+            <a href="#" class=""><button class="mx-[5%] w-[90%] bg-[#3461FF] h-12 mt-8 rounded-full text-white text-lg ">Connect</button></a>
+          </section>      
+    </main>  
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../js/script.js"></script>
+</html>

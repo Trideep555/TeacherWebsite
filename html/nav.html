@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- navbar start -->
+    <nav
+      class="flex justify-between h-16 items-center bg-transparent absolute z-10 top-0 left-0 w-screen px-10 md:px-20"
+    >
+      <!-- logoArea -->
+      <div class="h-10 w-16">
+        <img class="h-10 w-16" src="../images/Logo.svg" alt="" />
+      </div>
+      <!-- tabArea -->
+      <div
+        id="navTabs"
+        class="flex text-center bg-blue-400 md:bg-transparent z-0 md:z-10 absolute top-16 duration-500 left-[-100vw] md:static w-screen md:w-auto flex-col md:flex-row md:gap-[4vw] gap-[8vw] py-[2vw] md:py-0 font-poppins font-medium text-base select-none"
+      >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4">Teachers</div></a
+        >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4">About us</div></a
+        >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4">Contact us</div></a
+        >
+      </div>
+      <div class="md:hidden">
+        <i
+          class="fa-solid fa-bars text-lg cursor-pointer"
+          onclick="menuToggleBtn(this)"
+        ></i>
+      </div>
+    </nav>
+    <!-- navbar end -->
+  </body>
+  <script src="../js/script.js" defer></script>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    /> -->
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- -----------------------------------navbar start ------------------------------------------------------>
+    <nav
+    class="flex justify-between h-16 items-center bg-white fixed z-30 top-0 left-0 w-full px-10 md:px-8 lg:px-20 shadow-sm"
+  >
+    <!-- logoArea -->
+    <div class="h-12 w-20">
+      <img class="h-12 w-20" src="../Img/Logo/Mosaic Logo.png" alt="" />
+    </div>
+    <!-- tabArea -->
+    <div
+      id="navTabs"
+      class="flex text-center white md:bg-transparent z-0 md:z-10 absolute top-16 duration-500 left-[-100vw] md:static w-72 h-screen md:h-auto bg-white md:w-auto flex-col md:flex-row md:gap-[4vw] gap-[8vw] py-[2vw] md:py-0 font-poppins font-medium text-base select-none shadow-2xl md:shadow-none"
+    >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          Home
+        </div></a
+      >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          Teachers
+        </div></a
+      >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          About us
+        </div></a
+      >
+      <a href="#"
+        ><div class="hover:underline underline-offset-4 leading-[3rem]">
+          FAQs
+        </div></a
+      >
+      <a class="mx-auto md:mx-0" href="#"
+        ><div
+          class="bg-[#3461FF] h-12 w-32 leading-[3rem] text-white rounded-full"
+        >
+          Book a call
+        </div></a
+      >
+    </div>
+    <div class="md:hidden">
+      <i
+        class="fa-solid fa-bars text-lg cursor-pointer"
+        onclick="menuToggleBtn(this)"
+      ></i>
+    </div>
+  </nav>
+    <!-- navbar end -->
+
+    <!-- this is the starting of the main section  -->
+
+    <!-- this is the starting of  carousel section -->
+    <!-- <main class="h-screen mt-16 w-full relative overflow-x-hidden">
+      <wrapper class="bannerCarousel duration-500 flex absolute top-0 left-0 overflow-hidden">
+        <div class="h-screen w-screen">
+          <img class="w-full h-full" src="../Img/banner/banner 1.jpg" alt="">
+        </div>
+        <div class="h-screen w-screen">
+          <img class="w-full h-full" src="../Img/banner/banner 2.jpg" alt="">
+        </div>
+        <div class="h-screen w-screen">
+          <img class="w-full h-full" src="../Img/banner/banner 3.jpg" alt="">
+        </div>
+      </wrapper>
+
+    </main> -->
+
+
+    <!-- this is the ending of  carousel section -->
+    <!-- starting of the first section  -->
+    <main class="bg-[#f1f1f1] w-auto lg:h-auto flex justify-evenly mt-0 lg:mt-16 relative h-screen ">
+      <!-- left side div area -->
+      <section class="px-5 md:pl-20 lg:w-1/2 py-28 flex flex-col gap-8 z-20 lg:bg-transparent bg-[#f1f1f1]/90 w-screen">
+        <!-- main heading area with bold letter and font 2xl -->
+        <heading class="font-semibold font-sans lg:text-8xl md:text-7xl text-6xl w-auto text-left select-none"
+          >Match,</br> Learn, And </br>Soar To </br>Success
+        </heading>
+        <!--------------------- sub heading part -------------------->
+        <subHeading class="text-xl text-black/50 select-none">
+          "Find your perfect teacher today"
+        </subHeading>
+        <!-------------------- lets talk area --------------------------->
+        <contactArea>
+          <form action="" class="flex gap-4 md:flex-row flex-col">
+            <input type="text" name="" id="" placeholder="Enter your email" class="h-12 md:w-1/2 rounded-full px-4  outline-none border-black/30 border-[1px] placeholder:text-black/50 w-full">
+            <input type="submit"  class="bg-[#3461FF] h-12 md:w-32 rounded-full text-white cursor-pointer w-full" value="Lets Talk">
+          </form>
+        </contactArea>
+      </section>
+      <!-- right section of the first area -->
+      <section class="lg:w-1/2 w-screen lg:relative absolute top-0 left-0 right-0 mx-auto z-10 lg:z-20">
+        <img src="../Img/first-page-photos/Combined.png" class="lg:my-10 lg:h-4/5 lg:w-4/5 h-screen w-auto mx-auto lg:mx-0 z-10 lg:z-20" alt="" draggable="false">
+      </section>
+    </main>
+    <!-- this is the end of first section hero -->
+
+    <!-- starting of the teacher section  -->
+    <main class="relative py-20 flex flex-col gap-20">
+      <section class="font-semibold text-5xl w-4/5 h-auto mx-auto flex justify-between">
+        <heading class="">Our Teachers</heading>
+        <!-- This section is for button area with left and right button -->
+        <section class="md:flex justify-evenly hidden">
+          <img class=" leftSwipeArrow mx-2"src="../Img/ui-buttons/leftArrow.svg" alt="">
+          <img class=" rightSwipeArrow mx-2"src="../Img/ui-buttons/rightArrow.svg" alt="">
+        </section>
+      </section>
+      <!-- this section is for teacher cards area -->
+      <section class="carousel-cu w-[90%] px-[5%] mx-auto grid grid-flow-col overflow-x-auto lg:overflow-x-hidden h-full py-8  gap-8">
+        <!-- card section -->
+        <!------------------ card 1 ------------------ ---->
+        <section class=" relative w-96  rounded-2xl shadow-lg border-t-2 border-black/20 py-8">
+          
+          <!-- profile image area with absolute property -->
+          <div class="px-4 h-20 w-full p-1 bg-white rounded-full flex ">
+            <img  class=" w-[4.5rem] h-[4.5rem] rounded-full" src="../Img/Teacher card photos/user.png" alt="" draggable="false">
+            <span>
+              <heading class=" block px-4 font-semibold text-2xl">Lisa Daniel</heading>
+              <!------------------- subject Names -------------------->
+              <h1 class="px-4 text-black/60 mt-2">English, Mathematics
+
+              </h1>
+            </span>
+          </div>
+          <!-- Teacher Name -->
+          
+          <!--------------- Tags area ---------------------------->
+          <div class="px-4 flex gap-2 mt-3">
+            <!-- tag 1 is for experience -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">4 years</tag>
+            <!-- tag 2 is for class -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Class VII</tag>
+            <!-- tag 3 is for degree -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Graduated</tag>
+
+          </div>
+          <!---------------------- connect button --------------------->
+          <a href="#" class=""><button class="mx-[5%] w-[90%] bg-[#3461FF] h-12 mt-8 rounded-full text-white text-lg ">Connect</button></a>
+        </section>   
+       <!-- ------------------ card 2 ------------------ -->
+       <section class=" relative w-96  rounded-2xl shadow-lg border-t-2 border-black/20 py-8">
+          
+        <!-- profile image area with absolute property -->
+        <div class="px-4 h-20 w-full p-1 bg-white rounded-full flex ">
+          <img  class=" w-[4.5rem] h-[4.5rem] rounded-full" src="../Img/Teacher card photos/user.png" alt="" draggable="false">
+          <span>
+            <heading class=" block px-4 font-semibold text-2xl">Lisa Daniel</heading>
+            <!------------------- subject Names -------------------->
+            <h1 class="px-4 text-black/60 mt-2">English, Mathematics
+
+            </h1>
+          </span>
+        </div>
+        <!-- Teacher Name -->
+        
+        <!--------------- Tags area ---------------------------->
+        <div class="px-4 flex gap-2 mt-3">
+          <!-- tag 1 is for experience -->
+          <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">4 years</tag>
+          <!-- tag 2 is for class -->
+          <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Class VII</tag>
+          <!-- tag 3 is for degree -->
+          <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Graduated</tag>
+
+        </div>
+        <!---------------------- connect button --------------------->
+        <a href="#" class=""><button class="mx-[5%] w-[90%] bg-[#3461FF] h-12 mt-8 rounded-full text-white text-lg ">Connect</button></a>
+      </section>
+        <!-- ---------------------card 3 ---------------------- ----->
+        <section class=" relative w-96  rounded-2xl shadow-lg border-t-2 border-black/20 py-8">
+          
+          <!-- profile image area with absolute property -->
+          <div class="px-4 h-20 w-full p-1 bg-white rounded-full flex ">
+            <img  class=" w-[4.5rem] h-[4.5rem] rounded-full" src="../Img/Teacher card photos/user.png" alt="" draggable="false">
+            <span>
+              <heading class=" block px-4 font-semibold text-2xl">Lisa Daniel</heading>
+              <!------------------- subject Names -------------------->
+              <h1 class="px-4 text-black/60 mt-2">English, Mathematics
+
+              </h1>
+            </span>
+          </div>
+          <!-- Teacher Name -->
+          
+          <!--------------- Tags area ---------------------------->
+          <div class="px-4 flex gap-2 mt-3">
+            <!-- tag 1 is for experience -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">4 years</tag>
+            <!-- tag 2 is for class -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Class VII</tag>
+            <!-- tag 3 is for degree -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Graduated</tag>
+
+          </div>
+          <!---------------------- connect button --------------------->
+          <a href="#" class=""><button class="mx-[5%] w-[90%] bg-[#3461FF] h-12 mt-8 rounded-full text-white text-lg ">Connect</button></a>
+        </section>
+        <!------------------------ card 4 ------------------->
+        <section class=" relative w-96  rounded-2xl shadow-lg border-t-2 border-black/20 py-8">
+          
+          <!-- profile image area with absolute property -->
+          <div class="px-4 h-20 w-full p-1 bg-white rounded-full flex ">
+            <img  class=" w-[4.5rem] h-[4.5rem] rounded-full" src="../Img/Teacher card photos/user.png" alt="" draggable="false">
+            <span>
+              <heading class=" block px-4 font-semibold text-2xl">Lisa Daniel</heading>
+              <!------------------- subject Names -------------------->
+              <h1 class="px-4 text-black/60 mt-2">English, Mathematics
+
+              </h1>
+            </span>
+          </div>
+          <!-- Teacher Name -->
+          
+          <!--------------- Tags area ---------------------------->
+          <div class="px-4 flex gap-2 mt-3">
+            <!-- tag 1 is for experience -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">4 years</tag>
+            <!-- tag 2 is for class -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Class VII</tag>
+            <!-- tag 3 is for degree -->
+            <tag class="border-black/70 border-2 px-2 rounded-full font-medium text-sm text-black/70">Graduated</tag>
+
+          </div>
+          <!---------------------- connect button --------------------->
+          <a href="#" class=""><button class="mx-[5%] w-[90%] bg-[#3461FF] h-12 mt-8 rounded-full text-white text-lg ">Connect</button></a>
+        </section>
+      </section>
+    </main>
+    <!-- end of teacher card section  -->
+
+    <!-- starting of cta section -->
+    <main class="flex justify-center items-center bg-[#f1f1f1] py-40">
+      <section class="w-4/5 bg-[#3461FF]  mx-auto h-80 rounded-3xl relative overflow-hidden">
+          <wrapper class="flex justify-evenly lg:flex-row  flex-col  h-full w-full">
+            <!-- left section text -->
+              <div class="z-20 lg:w-1/2 w-full text-center lg:text-6xl text-4xl sm:text-5xl font-semibold lg:leading-[5rem] leading-[2rem] sm:leading-[3rem] lg:py-20 py-0 flex flex-col md:max-lg:flex-row md:max-lg:justify-center  lg:gap-0 gap-4 text-white">
+                <div>Elevate Your</div>
+                <div>Skills Today!</div> 
+              </div>
+              <!-- right section -->
+              <div class="lg:w-1/2 w-full px-12  text-base sm:text-xl lg:py-28 z-20 text-white">Unlock exciting opportinuties of your carrer. Next step - Book a consultation with us today. 
+              <br>
+              <button class="text-black bg-white md:w-32 w-full h-10 mt-8 rounded-full text-base font-medium">Book Call</button>
+            </div>
+          </wrapper>
+          <!-- This is background ball -->
+          <div class=" z-10 h-96 w-96 absolute top-0 bottom-0 left-72 my-auto  rounded-full 
+          bg-gradient-to-l from-[#3461FF] via-[#3461FF] to-[#8399E9]
+          "></div>
+          <div class="z-0 h-96 w-96 absolute top-0 bottom-0 left-24 my-auto  rounded-full 
+          bg-gradient-to-l from-[#3461FF]  to-[#8399E9]
+          "></div>
+          <!-- This is background ball -->
+          <div class="h-96 w-96 absolute top-0 bottom-0 -left-24 my-auto  rounded-full 
+          bg-gradient-to-l from-[#3461FF] to-[#8399E9]
+          "></div>
+          <!-- This is background ball -->
+          <div class="h-96 w-96 absolute top-0 bottom-0 -left-72 my-auto  rounded-full bg-gradient-to-l from-[#3461FF] to-[#8399E9]
+          "></div>
+          
+      </section>
+    </main>
+    <!-- ending of cta section -->
+
+    <!-- starting of why choose us section -->
+    <main class="bg-[#f1f1f1] lg:h-[55rem] w-full py-28 overflow-hidden relative">
+      <div class="absolute flex justify-evenly rounded-[8rem] bg-white lg:h-[45rem] h-[85rem] sm:max-lg:h-[65rem] lg:w-full w-[90rem] -translate-x-1/4 lg:translate-x-0 shadow-lg rotate-3"></div>
+        <img class="h-28 w-28 absolute top-0 -rotate-6 left-0 " src="../Img/ui-buttons/packman.svg" alt="design image">
+
+        <wrapper class="relative  flex lg:justify-evenly lg:flex-row justify-center gap-20 pt-10 flex-col items-center w-full px-[5%] lg:px-0">
+
+          <!-- this is the left section of why choose us area -->
+          <section class="lg:w-1/2 w-[90%] flex flex-col gap-12 lg:px-32 px-0 justify-center">
+            <heading class="font-semibold lg:text-6xl text-4xl text-justify">Why Choose Us?</heading>
+            <p class="lf:w-[90%] w-full text-black/50 text-justify ">In our teacher matchmaking endeavor, we're dedicated to close collaboration with our clients. By understanding their goals and challenges deeply, we create tailored marketing campaigns that consistently deliver impressive results.</p>
+            <img class="h-54 w-[90%] hidden lg:block" src="../Img/why-choose-us.png" alt="">
+          </section>
+          <!-- this is the right section of why choose us area -->
+          <section class="flex flex-col gap-8 justify-center">
+              <div class="flex gap-4 lg:flex-row flex-col">
+                <img  class="lg:h-20 lg:w-20 h-16 w-16"src="../Img/ui-buttons/icon1.svg" alt="">
+                <span class="my-auto">
+                  <h1 class="font-medium text-2xl">Quality Assurance</h1>
+                  <p class="text-black/50">Education at Your Fingertips: Easy Access to Quality Learning</p>
+                </span>
+              </div>
+              <div class="flex gap-4 lg:flex-row flex-col">
+                <img  class="lg:h-20 lg:w-20 h-16 w-16"src="../Img/ui-buttons/icon2.svg" alt="">
+                <span class="my-auto">
+                  <h1 class="font-medium text-2xl">Personalized Matchmaking</h1>
+                  <p class="text-black/50 ">Tailored to Your Needs: Personalized Learning Matches</p>
+                </span>
+              </div>
+              <div class="flex gap-4 lg:flex-row flex-col">
+                <img  class="lg:h-20 lg:w-20 h-16 w-16"src="../Img/ui-buttons/icon3.svg" alt="">
+                <span class="my-auto">
+                  <h1 class="font-medium text-2xl">Convinience And Accessibility</h1>
+                  <p class="text-black/50">Education at Your Fingertips: Easy Access to Quality Learning</p>
+                </span>
+              </div>
+              <div class="flex gap-4 lg:flex-row flex-col md:px-0 pr-20 ">
+                <img  class="lg:h-20 lg:w-20 h-16 w-16"src="../Img/ui-buttons/icon4.svg" alt="">
+                <span class="my-auto">
+                  <h1 class="font-medium text-2xl">Continous Support</h1>
+                  <p class="text-black/50">Guidance Every Step of the Way: Ongoing Support and Abundant Resources</p>
+                </span>
+              </div>
+          </section>
+        </wrapper>
+        <img class="h-24 w-36 absolute -bottom-12 right-8 -rotate-3" src="../Img/ui-buttons/Vector 245.svg" alt="">
+      <!-- </div> -->
+    </main>
+    <!-- ending of why choose us section -->
+
+    <!-- starting of the testimonial section -->
+    <main class="relative py-20 flex flex-col gap-20 bg-[#f1f1f1] overflow-x-hidden">
+      <section class="font-semibold text-5xl w-4/5 h-auto mx-auto flex justify-between bg-[#f1f1f1]">
+        <heading class="">What Our Clients Said About Us</heading>
+        <!-- This section is for button area with left and right button -->
+        <section class="hidden justify-evenly md:flex">
+          <img draggable="false" class=" leftSwipeArrowtes mx-2"src="../Img/ui-buttons/leftArrow.svg" alt="">
+          <img draggable="false" class=" rightSwipeArrowtes mx-2"src="../Img/ui-buttons/rightArrow.svg" alt="">
+        </section>
+      </section>
+      <!-- this section is for testimonial card area -->
+      <section class="carousel-tes w-[90%] px-[5%] mx-auto grid grid-flow-col lg:overflow-x-hidden overflow-x-auto h-full py-8  gap-8">
+        <!-- card section -->
+        <div class="duration-500 h-auto group lg:w-96 w-60 bg-white hover:bg-[#3461FF] rounded-2xl p-4 ">
+          <heading class="flex gap-4 group-hover:text-white">
+            <img class="h-12 w-12 rounded-full"src="../Img/Teacher card photos/user.png " alt="">
+            <div class="flex flex-col gap-1">
+              <span class="text-xl font-medium ">Jacob Joshua</span>
+              <span class="">Student</span>
+            </div>
+          </heading>
+          <p class="mt-4 group-hover:text-white">"This is a game-changer in the education field. They not only matched me with an outstanding teaching position but also provided valuable guidance throughout the process. Their commitment to quality education shines through in every step."</p>
+        </div>   
+        <div class="h-auto group lg:w-96 w-60 bg-white hover:bg-[#3461FF] rounded-2xl p-4 duration-500">
+          <heading class="flex gap-4 group-hover:text-white">
+            <img class="h-12 w-12 rounded-full"src="../Img/Teacher card photos/user.png " alt="">
+            <div class="flex flex-col gap-1">
+              <span class="text-xl font-medium ">Amelia Joseph</span>
+              <span class="group-hover:text-white text-black/50">Professor</span>
+            </div>
+          </heading>
+          <p class="mt-4 group-hover:text-white">"I had been searching for the right tutor for my child for months, and then I found [Your Teacher Finder Business]. Their platform made it easy to connect with experienced educators who understood my child's needs. The results speak for themselves - my child's academic performance has improved significantly"</p>
+        </div>   
+        <div class="h-auto lg:w-96 w-60 bg-white hover:bg-[#3461FF] rounded-2xl p-4 group duration-500">
+          <heading class="flex gap-4 group-hover:text-white">
+            <img class="h-12 w-12 rounded-full"src="../Img/Teacher card photos/user.png " alt="">
+            <div class="flex flex-col gap-1">
+              <span class="text-xl font-medium ">Amelia Joseph</span>
+              <span class="text-black/50 group-hover:text-white">Law Student</span>
+            </div>
+          </heading>
+          <p class="mt-4 group-hover:text-white">"Finding the perfect teaching opportunity seemed like an overwhelming task until I discovered [Your Teacher Finder Business]. Their personalized approach and dedicated support helped me connect with the ideal teaching position. I can't thank them enough for helping me kickstart my teaching career."</p>
+        </div>   
+      </section>
+    </main>
+    <!-- ending of the testimonial section -->
+
+    <!-- starting of Faq section -->
+    <main class="relative py-20 flex flex-col gap-20">
+      <section class="w-4/5 h-auto mx-auto flex justify-between lg:flex-row flex-col-reverse lg:gap-0 gap-16">
+        <!-- this is the left section of the faq -->
+        <div class="lg:w-1/2 w-full h-full font-medium text-lg ">
+          
+          <section class="h-auto w-full border-t-2 border-b-2 py-5 flex justify-between">How does Mentor Mosaic platform work? <img src="../Img/ui-buttons/addicon.svg" alt="" class="h-10"></section>
+          <section class="w-full border-t-2 border-b-2 py-5 flex justify-between"> How do you ensure the quality of teachers on your platform? <img src="../Img/ui-buttons/addicon.svg" alt="" class="h-10"></section>
+          <section class="w-full border-t-2 border-b-2 py-5 flex justify-between">What subjects and grade levels are covered on your platform? <img src="../Img/ui-buttons/addicon.svg" alt="" class="h-10"></section>
+        </div>
+        <!-- this is the right section of the faq -->
+        <div class="lg:w-1/2 w-full  h-full flex text-left gap-8 flex-col  lg:pl-32">
+          <heading class="text-4xl font-semibold">How can we help you?</heading>
+          <p class="font-normal text-black/50">Follow our newsletter. We will regulary update our latest project and availability.</p>
+          <contactArea>
+            <form action="" class="flex gap-4 mt-8 sm:flex-row flex-col">
+              <input type="text" name="" id="" placeholder="Enter your email" class=" bg-[#fafafa] border-black/20 border-2 h-12 sm:w-4/5 w-full rounded-full px-4  outline-none  placeholder:text-black/50">
+              <input type="submit"  class="bg-[#3461FF] h-12 sm:w-32 w-full rounded-full text-white cursor-pointer" value="Lets Talk">
+            </form>
+          </contactArea>
+          <a class="font-bold text-[#3461FF] text-lg hover:underline underline-offset-2" href="">More FAQ -></a>
+        </div>
+      </section>
+      
+      
+    </main>
+    <!-- ending of Faq section -->
+
+    <!-- starting of contact us section -->
+    <main class="relative bg-[#f1f1f1] h-auto p-20 pt-32 w-full flex justify-center items-center overflow-hidden">
+      <section class="bg-white h-[40rem] w-[90%] rounded-2xl p-2 flex justify-between gap-2 shadow-lg z-10">
+
+        <!-- This is left section of contact area -->
+        <div class="relative bg-black rounded-2xl h-full w-2/5 pl-8 pt-12 overflow-hidden">
+          <heading class="text-4xl font-semibold text-white">Contact Information</heading>
+          <p class="text-white/50 mt-2">Say something to start a live chat!</p>
+          <section class="mt-20 text-white flex flex-col gap-8">
+            <span  class="flex gap-8 font-poppins text-lg"><img src="../Img/ui-buttons/bxs_phone-call.svg" alt="">+91 1234567890</span>
+            <span  class="flex gap-8 font-poppins text-lg"><img src="../Img/ui-buttons/ic_sharp-email.svg" alt="">demo@email.com</span>
+            <span  class="flex gap-8 font-poppins text-lg"><img src="../Img/ui-buttons/carbon_location-filled.svg" alt="">132 Dartmouth Street Boston, Massachusetts 02156 United States</span>
+          </section>
+
+          <!-- 2 circle div -->
+          <div class="bg-white/40 absolute -bottom-32 -right-32 h-80 w-80 rounded-full"></div>
+          <div class="bg-white/40 absolute bottom-16 right-16 h-40 w-40 rounded-full"></div>
+
+          <!-- social icons section -->
+          <section class="mt-40 flex gap-8">
+            <a href="#"><img src="../Img/ui-buttons/twitter.svg" alt=""></a>
+            <a href="#"><img src="../Img/ui-buttons/insta.svg" alt=""></a>
+            <a href="#"><img src="../Img/ui-buttons/Facebook.svg" alt=""></a>
+          </section>
+        </div>
+        <!-- This is right section of contact area -->
+        <div class="relative rounded-2xl h-full w-3/5 px-8 pt-12">
+          <form  class="flex flex-col gap-16 font-poppins"action="">
+            <section class="flex justify-evenly gap-12">
+              <span class="w-1/2 flex flex-col gap-2">
+                <label for="FName">First Name</label>
+                <input type="text" id="FName" class="border-b-2 border-t-0 border-x-0 border-black/50 !outline-none w-full text-black/50">
+            </span>
+              <span class="w-1/2 flex flex-col gap-2">
+                <label for="LName">Last Name</label>
+                <input type="text" id="LName" class="border-b-2 border-t-0 border-x-0 border-black/50 !outline-none w-full text-black/50">
+            </span>
+            </section>
+            <section class="flex justify-evenly gap-12">
+              <span class="w-1/2 flex flex-col gap-2">
+                <label for="FName">Email</label>
+                <input type="text" id="FName" class="border-b-2 border-t-0 border-x-0 border-black/50 !outline-none w-full text-black/50">
+            </span>
+              <span class="w-1/2 flex flex-col gap-2">
+                <label for="LName">Phone Number</label>
+                <input type="text" id="LName" class="border-b-2 border-t-0 border-x-0 border-black/50 outline-none w-full text-black/50">
+            </span>
+            </section>
+            <section>
+              <heading class="text-black text-xl font-semibold">Select Subject?</heading>
+              <div class="mt-4">
+                <input type="radio" class="" name="subjectContact" id="ginquiry">
+                <label for="ginquiry">General inquiry</label>
+                <input type="radio" class="ml-8" name="subjectContact" id="refund">
+                <label for="refund">Refund</label>
+                <input type="radio" class="ml-8" name="subjectContact" id="working">
+                <label for="working">How it works?</label>
+                <input type="radio" class="ml-8" name="subjectContact" id="Others">
+                <label for="Others">Others</label>
+              </div>
+            </section>
+            <span class="w-full flex flex-col gap-2">
+              <label for="LName">Your message</label>
+              <input type="text" id="LName" class="border-b-2 border-black/50 outline-none w-full text-black/50">
+            </span>
+            <div class="w-full flex justify-end items-end">
+              <input type="submit" class=" h-12 w-60 rounded-full text-white bg-[#3461FF]" value="Send message"/>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="bg-gradient-to-r from-[#3461FF] via-[#3461FF] to-[#6B88EF] w-screen h-96 rounded-tr-[17rem] rounded-tl-[10rem] absolute -bottom-12 left-0  z-0"></section>
+    </main>
+    <!-- ending of contact us section -->
+
+    <!-- footer section start -->
+    <footer class="relative bg-gradient-to-r from-[#3461FF] via-[#3461FF] to-[#6B88EF] w-full h-auto overflow-hidden">
+      <img  class="absolute top-0 left-0 z-0 w-screen mt-24"src="../Img/ui-buttons/Rectangle 207.svg" alt="">
+      <section class="relative z-10 flex justify-between px-12 py-32">
+        <!-- this is the left section area of the footer -->
+        <div class="z-10 flex  flex-col items-center w-[30%] gap-12">
+          <img class="mt-24 w-52 relative z-10" src="../Img/Logo/Mentor Mosaic-footer-logo.svg" alt="">
+          <section class="flex gap-16 z-10">
+            <a href="#"><img src="../Img/ui-buttons/twitter.svg" alt=""></a>
+            <a href="#"><img src="../Img/ui-buttons/insta.svg" alt=""></a>
+            <a href="#"><img src="../Img/ui-buttons/Facebook.svg" alt=""></a>
+          </section>
+          <button class="h-12 bg-white w-52 rounded-full">Contact Us</button>
+        </div>
+        <!-- this is the right section area of the footer mainly tab area-->
+        <div class="w-[50%] mt-24 flex gap-20">
+          <section class="flex flex-col gap-12">
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Work With Us</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Advertise With Us</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Support Us</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Business Advices</a>
+          </section>
+          <section class="flex flex-col gap-12">
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Private Coaching</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Our Work</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Our Commitment</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Our Team</a>
+          </section>
+          <section class="flex flex-col gap-12">
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">About Us</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">FAQs</a>
+            <a href="#" class="text-white font-semibold text-xl hover:underline underline-offset-4">Report a bug</a>
+          </section>
+        </div>
+      </section>
+    </footer>
+    <!-- copyright section -->
+    <section class="h-20 full py-8 px-12 bg-black text-white font-medium text-base flex justify-between">
+      <span>&copy; 2023 Mentor mosaic, Inc. - All Rights Reserved</span>
+      <div class="flex justify-around gap-8">
+        <span>Terms Of Use</span>
+        <span>Privacy Policy</span>
+      </div>
+    </section>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script> -->
+  </body>
+  
+  <script src="../js/script.js" defer></script>
+</html>

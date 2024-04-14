@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- navv -->
+    <nav
+      class="flex justify-between h-16 items-center bg-white fixed z-30 top-0 left-0 w-full px-10 md:px-8 lg:px-20 shadow-sm"
+    >
+      <!-- logoArea -->
+      <div class="h-12 w-20">
+        <img class="h-12 w-20" src="../Img/Logo/Mosaic Logo.png" alt="" />
+      </div>
+      <!-- tabArea -->
+      <div
+        id="navTabs"
+        class="flex text-center white md:bg-transparent z-0 md:z-10 absolute top-16 duration-500 left-[-100vw] md:static w-72 h-screen md:h-auto bg-white md:w-auto flex-col md:flex-row md:gap-[4vw] gap-[8vw] py-[2vw] md:py-0 font-poppins font-medium text-base select-none shadow-2xl md:shadow-none"
+      >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4 leading-[3rem]">
+            Home
+          </div></a
+        >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4 leading-[3rem]">
+            Teachers
+          </div></a
+        >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4 leading-[3rem]">
+            About us
+          </div></a
+        >
+        <a href="#"
+          ><div class="hover:underline underline-offset-4 leading-[3rem]">
+            FAQs
+          </div></a
+        >
+        <a class="mx-auto md:mx-0" href="#"
+          ><div
+            class="bg-[#3461FF] h-12 w-32 leading-[3rem] text-white rounded-full"
+          >
+            Book a call
+          </div></a
+        >
+      </div>
+      <div class="md:hidden">
+        <i
+          class="fa-solid fa-bars text-lg cursor-pointer"
+          onclick="menuToggleBtn(this)"
+        ></i>
+      </div>
+    </nav>
+    <!-- navv -->
+    <profile class="bg-[#F1F1F1] relative overflow-x-hidden">
+      <!-- main div -->
+      <div
+        class="h-auto w-screen mt-[4.1rem] flex flex-col gap-12 lg:gap-0 lg:flex-row justify-center pt-12"
+      >
+        <!-- h-[35rem] w-[30rem] -->
+        <!-- left part -->
+        <div class="h-full w-full">
+          <div
+            class="flex justify-center text-[#6C6C6C] font-sans font-medium tracking-wide text-xl"
+          >
+            Profile
+          </div>
+          <!-- img part aita -->
+          <div class="flex justify-center mt-4">
+            <div
+              class="group/imgOverlay h-28 w-28 rounded-full bg-[#6C6C6C] flex justify-center items-center relative"
+            >
+              <img
+                class="h-[6.5rem] w-[6.5rem] rounded-full"
+                src="../Img/Teacher card photos/user.png"
+                alt=""
+              />
+              <label for="upload-dp"><div class="group-hover/imgOverlay:block hidden  bg-black/30  h-28 w-28 rounded-full absolute top-0 left-0 text-white text-center py-12 font-semibold cursor-pointer "><i class="fa-solid fa-cloud-arrow-up"></i> Upload</div></label>
+              <input class="hidden" type="file" name="" id="upload-dp">
+            </div>
+          </div>
+          <!-- img part aita -->
+          <!-- name and work of Teacher -->
+          <div class="flex justify-center items-center mt-4 flex-col">
+            <div class="text-black font-sans font-bold tracking-wide text-xl">
+              Swarnadip
+            </div>
+            <div
+              class="text-[#6C6C6C] font-sans font-light tracking-wide text-xl"
+            >
+              WEB Dev
+            </div>
+          </div>
+          <!-- name and work of Teacher -->
+          <!-- rest of the information -->
+          <div class="flex justify-evenly mt-">
+            <div
+              class="h-[6.5rem] w-[8rem] flex justify-center items-center flex-col"
+            >
+              <div
+                class="text-black font-sans font-light tracking-wide text-2xl"
+              >
+                21
+              </div>
+              <div class="text-[#6C6C6C] font-sans font-extralight text-lg">
+                Students
+              </div>
+            </div>
+            <img src="../Img/Rectangle 3.png" alt="" />
+            <div
+              class="h-[6.5rem] w-[8rem] flex justify-center items-center flex-col"
+            >
+              <div
+                class="text-black font-sans font-light tracking-wide text-2xl"
+              >
+                4+
+              </div>
+              <div
+                class="text-[#6C6C6C] font-sans font-extralight text-base text-center capitalize leading-4"
+              >
+                Years of experience
+              </div>
+            </div>
+            <img src="../Img/Rectangle 3.png" alt="" />
+            <div
+              class="h-[6.5rem] w-[8rem] flex justify-center items-center flex-col"
+            >
+              <div
+                class="text-black font-sans font-light tracking-wide text-2xl"
+              >
+                B.Ed
+              </div>
+            </div>
+          </div>
+          <!-- rest of the information -->
+          <!-- contact button and location -->
+          <div class="flex justify-center items-center mt-8 flex-col">
+            <a href="#"
+              ><button
+                class="h-10 w-screen sm:w-[13rem] bg-[#3461FF] flex justify-center items-center rounded-xl text-white font-sans font-light tracking-wide text-lg capitalize"
+              >
+                Contact
+              </button></a
+            >
+            <div
+              class="text-[#6C6C6C] font-sans font-extralight text-base text-center capitalize leading-4 mt-2"
+            >
+              India , west bengal
+            </div>
+          </div>
+          <!-- contact button and location -->
+        </div>
+        <!-- left part -->
+
+        <!-- h-[35rem] w-[40rem] -->
+        <!-- right part -->
+        <div class="h-full w-full flex flex-col gap-7 px-16 relative">
+          <!-- <div
+            class="ml-[2.6rem] uppercase leading-6 font-semibold text-sm mt-8"
+          >
+            Basic info
+          </div>
+          <img class="mt-7 mx-[2.6rem]" src="../Img/Rectangle 21.png" alt="" />
+          <div class="flex justify-between mt-8">
+            <div class="capitalize flex flex-col">
+              <label
+                class="text-black font-sans font-extralight text-sm capitalize leading-4 tracking-tight"
+                for=""
+                >First name</label
+              >
+              <input
+                class="border-2 outline-none rounded-md bordor-[#E5E5E5] mt-3 w-[14.5rem]"
+                disabled
+                type="text"
+              />
+            </div>
+            <div class="capitalize flex flex-col">
+              <label
+                class="text-black font-sans font-extralight text-sm capitalize leading-4 tracking-tight"
+                for=""
+                >last name</label
+              >
+              <input
+                class="border-2 outline-none rounded-md bordor-[#E5E5E5] mt-3 w-[14.5rem]"
+                disabled
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="ml-[2.6rem] capitalize flex flex-col">
+              <label
+                class="text-black font-sans font-extralight text-sm capitalize leading-4 tracking-tight mt-6"
+                for=""
+                >qualifications</label
+              >
+              <input
+                class="border-2 outline-none rounded-md bordor-[#E5E5E5] mt-3 w-[34.8rem]"
+                disabled
+                type="text"
+              />
+            </div>
+            <div class="ml-[2.6rem] capitalize flex flex-col">
+              <label
+                class="text-black font-sans font-extralight text-sm capitalize leading-4 tracking-tight mt-6"
+                for=""
+                >Email</label
+              >
+              <input
+                class="border-2 outline-none rounded-md bordor-[#E5E5E5] mt-3 w-[34.8rem]"
+                disabled
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            class="ml-[2.6rem] uppercase leading-6 font-semibold text-sm mt-8"
+          >
+            About me
+          </div>
+          <img class="mt-7 mx-[2.6rem]" src="../Img/Rectangle 21.png" alt="" />
+          <input
+            class="ml-[2.6rem] border-2 outline-none rounded-md bordor-[#E5E5E5] mt-[2.5rem] h-[4rem] mx-[2.6rem]"
+            disabled
+            type="text"
+          /> -->
+
+          <!--todo Element 1 -->
+          <div class="uppercase font-bold text-lg">Basic info</div>
+
+          <!--todo Element 2 (line img)-->
+          <div class="w-full">
+            <img class="w-full" src="../Img/Rectangle 21.png" alt="" />
+          </div>
+
+          <!--todo Element 3(first name & last name) -->
+          <div class="flex w-full justify-between gap-8">
+            <div class="capitalize flex flex-col w-full">
+              <label
+                class="text-black font-sans capitalize leading-4 tracking-tight"
+                for=""
+                >First name</label
+              >
+              <input
+                class="border-2 bg-transparent outline-none rounded-md border-[#E5E5E5] mt-3 w-full h-10"
+                type="text"
+                disabled
+              />
+            </div>
+            <div class="capitalize flex flex-col w-full">
+              <label
+                class="text-black font-sans capitalize leading-4 tracking-tight"
+                for=""
+                >Last name</label
+              >
+              <input
+                class="border-2 bg-transparent outline-none rounded-md border-[#E5E5E5] mt-3 w-full h-10"
+                type="text"
+                disabled
+              />
+            </div>
+          </div>
+
+          <!--todo Element 4 (qualification) -->
+          <div class="flex w-full justify-between gap-8">
+            <div class="capitalize flex flex-col w-full">
+              <label
+                class="text-black font-sans capitalize leading-4 tracking-tight"
+                for=""
+                >Qualification</label
+              >
+              <input
+                class="border-2 bg-transparent outline-none rounded-md border-[#E5E5E5] mt-3 w-full h-10"
+                type="text"
+                disabled
+              />
+            </div>
+          </div>
+
+          <!--todo Element 5 (email)-->
+          <div class="flex w-full justify-between gap-8">
+            <div class="capitalize flex flex-col w-full">
+              <label
+                class="text-black font-sans capitalize leading-4 tracking-tight"
+                for=""
+                >Email</label
+              >
+              <input
+                class="border-2 bg-transparent outline-none rounded-md border-[#E5E5E5] mt-3 w-full h-10"
+                type="email"
+                disabled
+              />
+            </div>
+          </div>
+
+          <!--todo Element 6 (about me heading)-->
+          <div class="uppercase font-bold text-lg">About Me</div>
+
+          <!--todo Element 7 (line img) -->
+          <div class="w-full">
+            <img class="w-full" src="../Img/Rectangle 21.png" alt="" />
+          </div>
+
+          <!--todo Element 8 (about me section) -->
+          <div class="flex w-full justify-between gap-8 z-10">
+            <div class="capitalize flex flex-col w-full">
+              <input
+                class="border-2 bg-white/50 outline-none rounded-md border-[#E5E5E5] mt-3 w-full h-24 z-10 backdrop-blur-sm"
+                type="text"
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <!-- right part ENDD-->
+
+        <!-- <img src="../Img/Line 11.png" alt=""> -->
+      </div>
+
+      <!--* middle part(two images)  -->
+      <div class="w-full h-96 justify-between relative">
+        <img
+          class="absolute bottom-0 h-[30rem] left-0"
+          src="../Img/profilepage/profileImage2.svg"
+          alt=""
+        />
+        <img
+          class="absolute bottom-8 h-[30rem] right-0"
+          src="../Img/profilepage/profileImage1.svg"
+          alt=""
+        />
+      </div>
+      <!-- main div -->
+    </profile>
+    <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+  <div class="-m-1 flex flex-wrap md:-m-2">
+    <div class="flex w-1/2 flex-wrap">
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="../Img/banner/banner 1.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="../Img/banner/banner 2.jpg" />
+      </div>
+      <div class="w-full p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="../Img/banner/banner 3.jpg" />
+      </div>
+    </div>
+    <div class="flex w-1/2 flex-wrap">
+      <div class="w-full p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="../Img/banner/banner 1.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="../Img/banner/banner 2.jpg" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img
+          alt="gallery"
+          class="block h-full w-full rounded-lg object-cover object-center"
+          src="../Img/banner/banner 3.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+</html>

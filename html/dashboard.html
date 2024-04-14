@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="">
+        <nav
+      class="flex justify-between h-16 items-center bg-white fixed z-30 top-0 left-0 w-full px-10 md:px-8 lg:px-20 shadow-sm"
+    >
+      <!-- logoArea -->
+      <h1 class="text-xl font-semibold">
+        Admin Dashboard
+      </h1>
+      <!-- tabArea -->
+      <div
+        id="navTabs"
+        class="flex text-center white md:bg-transparent z-0 md:z-10 absolute top-16 duration-500 left-[-100vw] md:static w-72 h-screen md:h-auto bg-white md:w-auto flex-col md:flex-row md:gap-[4vw] gap-[8vw] py-[2vw] md:py-0 font-poppins font-medium text-base select-none shadow-2xl md:shadow-none"
+      >
+        
+        <a href="#"
+          ><div class="hover:underline underline-offset-4 leading-[3rem]">
+            Teachers'
+          </div></a
+        >
+        
+        <a href="#"
+          ><div class="hover:underline underline-offset-4 leading-[3rem]">
+            Feedbacks
+          </div></a
+        >
+        <a class="mx-auto md:mx-0" href="#"
+          ><div
+            class="bg-[#3461FF] h-12 w-32 leading-[3rem] text-white rounded-full"
+          >
+            Logout
+          </div></a
+        >
+      </div>
+      <div class="md:hidden">
+        <i
+          class="fa-solid fa-bars text-lg cursor-pointer"
+          onclick="menuToggleBtn(this)"
+        ></i>
+      </div>
+    </nav>
+    </header>
+    <main class="mt-16 overflow-auto px-4 w-screen">
+    <table class="w-[64rem] lg:w-full">
+      <tr class="">
+        <th class="border-2 border-black/50">First Name</th>
+        <th class="border-2 border-black/50">Last Name</th>
+        <th class="border-2 border-black/50">Phone number</th>
+        <th class="border-2 border-black/50">Email</th>
+        <!-- <th class="border-2 border-black/50">gender</th> -->
+        <th class="border-2 border-black/50">Age</th>
+        <th class="border-2 border-black/50">Experience</th>
+        <th class="border-2 border-black/50">Qualification</th>
+        <th class="border-2 border-black/50">Locality</th>
+        <th class="border-2 border-black/50">Address</th>
+        <!-- <th class="border-2 border-black/50">State</th> -->
+        <th class="border-2 border-black/50">Action</th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+    </main>
+</body>
+<script src="../js/script.js"></script>
+</html>
