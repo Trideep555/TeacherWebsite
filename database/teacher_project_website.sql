@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2024 at 12:28 PM
+-- Generation Time: Apr 14, 2024 at 07:48 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,6 +94,18 @@ CREATE TABLE `teacher-bannerimg-table` (
   `bannerImgPath` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `teacher-bannerimg-table`
+--
+
+INSERT INTO `teacher-bannerimg-table` (`id`, `teacherId`, `bannerImgPath`) VALUES
+(1, 7, './uploads/2138237510.png'),
+(3, 7, './uploads/636397738.jpg'),
+(5, 7, './uploads/87900670.png'),
+(6, 7, './uploads/1421904199.png'),
+(9, 7, './uploads/1310434713.png'),
+(10, 7, './uploads/1477186454.png');
+
 -- --------------------------------------------------------
 
 --
@@ -112,19 +124,30 @@ CREATE TABLE `teacher-cls-subj` (
 --
 
 INSERT INTO `teacher-cls-subj` (`id`, `teacherId`, `classId`, `subjectId`) VALUES
-(9, 1, 1, 1),
-(10, 1, 2, 5),
-(11, 2, 1, 2),
-(12, 2, 2, 2),
-(13, 2, 3, 2),
-(14, 3, 1, 3),
-(15, 3, 5, 5),
-(16, 3, 4, 5),
-(17, 4, 2, 1),
-(18, 4, 5, 4),
-(19, 5, 1, 3),
-(20, 5, 2, 3),
-(21, 5, 3, 3);
+(1, 1, 1, 1),
+(2, 1, 1, 3),
+(3, 1, 2, 3),
+(4, 1, 4, 4),
+(5, 1, 5, 4),
+(6, 2, 2, 2),
+(7, 2, 3, 3),
+(8, 2, 4, 6),
+(9, 2, 5, 1),
+(10, 3, 5, 1),
+(11, 3, 4, 5),
+(12, 3, 4, 4),
+(13, 3, 2, 5),
+(14, 4, 1, 1),
+(15, 4, 2, 3),
+(16, 5, 1, 5),
+(17, 5, 2, 6),
+(18, 5, 5, 6),
+(19, 6, 4, 4),
+(20, 6, 2, 2),
+(21, 6, 3, 2),
+(22, 7, 5, 6),
+(23, 7, 1, 6),
+(24, 7, 4, 6);
 
 -- --------------------------------------------------------
 
@@ -137,6 +160,17 @@ CREATE TABLE `teacher-profileimage-table` (
   `teacherId` int(11) NOT NULL,
   `profileImgPath` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `teacher-profileimage-table`
+--
+
+INSERT INTO `teacher-profileimage-table` (`id`, `teacherId`, `profileImgPath`) VALUES
+(3, 1, './uploads/508718472.jpg'),
+(4, 2, './uploads/1990172325.jpg'),
+(5, 3, './uploads/1966271404.jpg'),
+(6, 5, './uploads/1463051365.jpg'),
+(7, 7, './uploads/641319319.png');
 
 -- --------------------------------------------------------
 
@@ -165,11 +199,13 @@ CREATE TABLE `teacher-table` (
 --
 
 INSERT INTO `teacher-table` (`id`, `firstName`, `lastName`, `phoneNumber`, `email`, `gender`, `age`, `experience`, `qualification`, `locality`, `mapLink`, `address`, `state`) VALUES
-(1, 'Mayukh ', 'Chatterjee', '0123456789', 'mayukhChatterjee@gmail.com', 'Male', '28', '4', 'B.Tech', 'baguihati', 'Not Provided', 'Kolkata', 'West Bengal'),
-(2, 'Rajib', 'Ghosh', '9145678912', 'RajibGhosh454@gmail.com', 'Male', '30', '10', 'Masters(English)', 'behala', 'Not Provided', '11, Biren Roy Road W, opposite CESC Distribution Station, Behala Chowrasta, Behala Industrial Estate, Paschim Barisha, Kolkata, West Bengal 700008', 'West Bengal'),
-(3, 'Prabir', 'Banerjee', '9474012345', 'Prabir052@gmail.com', 'Male', '28', '4', 'PhD (Physics)', 'garia', 'Not Provided', '55, East, Sreerampur Rd, near Kavi Nazrul Metro Stn, Kolkata, West Bengal 700084', 'West Bengal'),
-(4, 'Arnab', 'Mukherjee', '9153044140', 'ArnabMukherjee052@gmail.com', 'Male', '25', '2', 'Graduate', 'naihati', 'Not Provided', 'Gouripur, Garifa, Naihati, Kolkata, West Bengal 743165', 'West Bengal'),
-(5, 'Aashish', 'Debnath', '9474567855', 'aashishD044@gmail.com', 'Male', '26', '3', 'B.Tech', 'newtown', 'Not Provided', 'Major Arterial Road(South-East, Biswa Bangla Sarani, AA II, Newtown, Kolkata, West Bengal 700156', 'West Bengal');
+(1, 'Bidyut', 'Kr Das', '1234567890', 'demo1@gmail.com', 'Male', '23', '1', 'Graduated', 'kankinara', 'Not Provided', 'Madral, Joychandi Tala', 'West Bengal'),
+(2, 'Kingshuk', 'Sil', '0512346789', 'demo2@gmail.com', 'Male', '23', 'Not Yet', 'Diploma', 'behala', '', 'SokherBajar,Kolkata', 'West Bengal'),
+(3, 'Diganta', 'Mondal', '1243567890', 'demo3@gmail.com', 'Male', '23', '1', 'Graduated', 'sector v', 'Not Provided', 'Saltlake, Kolkata', 'West Bengal'),
+(4, 'Aashish', 'Kumar Choudhury', '1253467890', 'demo4@gmail.com', 'Male', '23', '1', 'MacBook Owner', 'kestopur', 'Not Provided', 'Baguihati', 'Westbengal'),
+(5, 'Arnab', 'Debnath', '1235467890', 'demo5@gmail.com', 'Male', '23', '1', 'Chief Executive Officer', 'baguihati', 'Not Provided', 'Kolkata', 'West Bengal'),
+(6, 'Swarnadip', 'Dasgupta', '1209345678', 'demo6@gmail.com', 'Male', '23', '1', '10+2', 'naihati', 'Not Provided', '24 Parganas(North)', 'West Bengal'),
+(7, 'Akash', 'Doodeja', '1245367890', 'demo7@gmail.com', 'Male', '22', '3', 'M.Sc (Physics)', 'beldanga', 'Not Provided', 'Murshidabad', 'West Bengal');
 
 -- --------------------------------------------------------
 
@@ -194,13 +230,6 @@ CREATE TABLE `temp-teachertable` (
   `state` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `temp-teachertable`
---
-
-INSERT INTO `temp-teachertable` (`id`, `teacherId`, `firstName`, `lastName`, `phoneNumber`, `email`, `gender`, `age`, `experience`, `qualification`, `locality`, `mapLink`, `address`, `state`) VALUES
-(1, 1, 'Mayukh ', 'Chatterjee', '0123456789', 'mayukhChatterjee@gmail.com', 'Male', '28', '4', 'B.Tech', 'baguihati', 'https://maps.app.goo.gl/pEYoihr19M6XkgPF8', 'Kolkata', 'West Bengal');
-
 -- --------------------------------------------------------
 
 --
@@ -220,11 +249,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `teacherId`, `username`, `password`, `role`) VALUES
-(1, 1, 'mayukhChatterjee@gmail.com', 'e368b9938746fa090d6afd3628355133', 'Teacher'),
-(2, 2, 'RajibGhosh454@gmail.com', 'e368b9938746fa090d6afd3628355133', 'Teacher'),
-(3, 3, 'Prabir052@gmail.com', 'e368b9938746fa090d6afd3628355133', 'Teacher'),
-(4, 4, 'ArnabMukherjee052@gmail.com', 'e368b9938746fa090d6afd3628355133', 'Teacher'),
-(5, 5, 'aashishD044@gmail.com', 'e368b9938746fa090d6afd3628355133', 'Teacher');
+(9, 0, 'admin@gmail.com', '7ece99e593ff5dd200e2b9233d9ba654', 'Admin'),
+(11, 1, 'demo1@gmail.com', 'e368b9938746fa090d6afd3628355133', 'Teacher'),
+(12, 2, 'demo2@gmail.com', '1066726e7160bd9c987c9968e0cc275a', 'Teacher'),
+(13, 3, 'demo3@gmail.com', '297e430d45e7bf6f65f5dc929d6b072b', 'Teacher'),
+(14, 4, 'demo4@gmail.com', '7b1312a1b3e74bb174b3fbbf68ab5a92', 'Teacher'),
+(15, 5, 'demo5@gmail.com', '95346415f1f5933a78386d1759d2ef22', 'Teacher'),
+(16, 6, 'demo6@gmail.com', '7aeee81cdd1d43d0f1ebf938866831e3', 'Teacher'),
+(17, 7, 'demo7@gmail.com', '5961ba6c436f1eaa1ccf665316308b6a', 'Teacher'),
+(18, 8, 'demo8@gmail.com', '58857ed08cd530984d1c4156b0e8022f', 'Teacher');
 
 --
 -- Indexes for dumped tables
@@ -310,13 +343,13 @@ ALTER TABLE `subject-table`
 -- AUTO_INCREMENT for table `teacher-bannerimg-table`
 --
 ALTER TABLE `teacher-bannerimg-table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `teacher-cls-subj`
 --
 ALTER TABLE `teacher-cls-subj`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `teacher-profileimage-table`
@@ -328,19 +361,19 @@ ALTER TABLE `teacher-profileimage-table`
 -- AUTO_INCREMENT for table `teacher-table`
 --
 ALTER TABLE `teacher-table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `temp-teachertable`
 --
 ALTER TABLE `temp-teachertable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
