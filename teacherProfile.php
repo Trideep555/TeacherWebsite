@@ -241,7 +241,7 @@ $profileRes = mysqli_query($connection,$profilequery);
     </section>
 <!-- gallery area -->
 <?php 
-$banners = array("./Img/banner/banner 1.jpg","./Img/banner/banner 2.jpg","./Img/banner/banner 3.jpg","./Img/banner/banner 1.jpg","./Img/banner/banner 2.jpg","./Img/banner/banner 3.jpg");
+$banners = array("./Img/banner/banner 1.png","./Img/banner/banner 2.png","./Img/banner/banner 3.png","./Img/banner/banner 1.png","./Img/banner/banner 2.png","./Img/banner/banner 3.png");
 $bannerIDs = array();
 $bannerSql = "SELECT * FROM `teacher-bannerimg-table` WHERE `teacherId` = '$teacherId'";
 $bannerRes = mysqli_query($connection,$bannerSql);
