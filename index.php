@@ -3,43 +3,21 @@
 include("connection.php");
 include("header.php");
 include("nav.php");
-$bannerArray = array('TeacherProjectWebsite\Img\banner\banner 1.jpg','TeacherProjectWebsite\Img\banner\banner 1.jpg','TeacherProjectWebsite\Img\banner\banner 1.jpg');
-
-$bannerSql = "SELECT *  FROM `teacher-bannerimg-table` order by rand() LIMIT 3";
-$bannerRes = mysqli_query($connection,$bannerSql);
-$i = 0;
-while($row = mysqli_fetch_array($bannerRes)){
-  $bannerArray[$i] = $row['bannerImgPath'];
-  $i++;
-}
 ?>
 <!-- navbar end -->
 
 <!-- this is the starting of the main section  -->
 
-<!-- this is the starting of  carousel section -->
-<!-- <main class="h-[calc(100vh-4rem)] mt-16 w-full relative overflow-x-hidden">
-  <wrapper class="bannerCarousel duration-500 flex absolute top-0 left-0 overflow-hidden">
-    <div class="h-[calc(100vh-4rem)] w-screen">
-      <img class="w-full h-full" src="<?php echo $bannerArray[0];?>" alt="">
-    </div>
-    <div class="h-[calc(100vh-4rem)] w-screen">
-      <img class="w-full h-full" src="<?php echo $bannerArray[1];?>" alt="">
-    </div>
-    <div class="h-[calc(100vh-4rem)] w-screen">
-      <img class="w-full h-full" src="<?php echo $bannerArray[2];?>" alt="">
-    </div>
-  </wrapper>
-</main> -->
+<?php
+include("bannerCarousel.php");
+?>
 
-
-<!-- this is the ending of  carousel section -->
 <!-- starting of the first section  -->
-<main class="bg-[#f1f1f1] w-auto lg:h-auto flex justify-evenly mt-0  relative h-screen ">
+<main class="bg-[#f1f1f1] w-auto lg:h-auto flex justify-evenly relative h-screen ">
   <!-- left side div area -->
-  <section class="px-5 md:pl-20 lg:w-1/2 py-28 flex flex-col gap-8 z-20 lg:bg-transparent bg-[#f1f1f1]/90 w-screen">
+  <section class="md:pl-20 lg:w-1/2 py-28 flex flex-col gap-8 justify-center z-20 lg:bg-transparent bg-[#f1f1f1]/90 w-screen">
     <!-- main heading area with bold letter and font 2xl -->
-    <heading class="font-semibold font-sans lg:text-8xl md:text-7xl text-6xl w-auto text-left select-none">Match,</br> Learn, And </br>Soar To </br>Success
+    <heading class="font-semibold font-sans lg:text-8xl md:text-7xl text-6xl w-auto text-left select-none">Match</br> Learn And </br>Soar To Success
     </heading>
     <!--------------------- sub heading part -------------------->
     <subHeading class="text-xl text-black/50 select-none">
@@ -54,24 +32,24 @@ while($row = mysqli_fetch_array($bannerRes)){
     </contactArea>
   </section>
   <!-- right section of the first area -->
-  <section class="lg:w-1/2 w-screen lg:relative absolute top-0 left-0 right-0 mx-auto z-10 lg:z-20">
-    <img src="./Img/first-page-photos/heroImg.svg" class="lg:my-10 lg:h-4/5 lg:w-4/5 h-screen w-auto mx-auto lg:mx-0 z-10 lg:z-20" alt="" draggable="false">
+  <section class="lg:w-1/2 w-screen lg:relative absolute top-0 left-0 right-0 flex flex-row items-center justify-end mx-auto z-10 lg:z-20">
+    <img src="./Img/first-page-photos/heroImg.svg" class="lg:h-4/5 lg:w-4/5 h-screen w-auto mx-auto lg:mx-0 z-10 lg:z-20" alt="" draggable="false">
   </section>
 </main>
 <!-- this is the end of first section hero -->
 
 <!-- starting of the teacher section  -->
-<main class="relative py-20 flex flex-col gap-20">
-  <section class="font-semibold text-5xl w-4/5 h-auto mx-auto flex justify-between">
+<main class="relative py-20 flex flex-col gap-10">
+  <section class="font-semibold text-5xl w-[90%] h-auto mx-auto flex justify-between">
     <heading class="">Our Teachers</heading>
     <!-- This section is for button area with left and right button -->
     <section class="md:flex justify-evenly hidden">
-      <img class=" leftSwipeArrow mx-2 cursor-pointer" src="./Img/ui-buttons/leftArrow.svg" alt="">
+      <img class="leftSwipeArrow mx-2 cursor-pointer" src="./Img/ui-buttons/leftArrow.svg" alt="">
       <img class=" rightSwipeArrow mx-2 cursor-pointer" src="./Img/ui-buttons/rightArrow.svg" alt="">
     </section>
   </section>
   <!-- this section is for teacher cards area -->
-  <section class="carousel-cu w-[90%] px-[5%] mx-auto grid grid-flow-col overflow-x-auto lg:overflow-x-hidden h-full py-8  gap-8">
+  <section class="carousel-cu mx-auto grid grid-flow-col overflow-x-hidden h-full py-8 px-2 gap-8" style="width: calc(90% - 0.5rem);">
     <!-- card section -->
     <!------------------ card 1 ------------------ ---->
 
@@ -94,7 +72,7 @@ while($row = mysqli_fetch_array($bannerRes)){
 
     ?>
 
-    <section class=" relative w-96  rounded-2xl shadow-lg border-t-2 border-black/20 py-8 flex flex-col gap-4">
+    <section class=" relative w-96  rounded-2xl shadow-lg py-8 flex flex-col gap-4">
 
       <!-- profile image area with absolute property -->
       <div class="px-4 h-20 w-full p-1 bg-white rounded-full flex ">
@@ -164,7 +142,7 @@ while($row = mysqli_fetch_array($bannerRes)){
 <!-- end of teacher card section  -->
 
 <!-- starting of cta section -->
-<main class="flex justify-center items-center bg-[#f1f1f1] py-40">
+<main class="flex justify-center items-center bg-[#f1f1f1] py-20">
   <section class="w-4/5 bg-[#3461FF]  mx-auto h-80 rounded-3xl relative overflow-hidden">
     <wrapper class="flex justify-evenly lg:flex-row  flex-col  h-full w-full">
       <!-- left section text -->
@@ -198,20 +176,20 @@ while($row = mysqli_fetch_array($bannerRes)){
 <!-- ending of cta section -->
 
 <!-- starting of why choose us section -->
-<main id="about-us-section" class="bg-[#f1f1f1] lg:h-[55rem] w-full py-28 overflow-hidden relative">
+<main id="about-us-section" class="bg-[#f1f1f1] lg:h-[55rem] w-full py-20 overflow-hidden relative">
   <div class="absolute flex justify-evenly rounded-[8rem] bg-white lg:h-[45rem] h-[85rem] sm:max-lg:h-[65rem] lg:w-full w-[90rem] -translate-x-1/4 lg:translate-x-0 shadow-lg rotate-3"></div>
   <img class="h-28 w-28 absolute top-0 -rotate-6 left-0 " src="./Img/ui-buttons/packman.svg" alt="design image">
 
-  <wrapper class="relative  flex lg:justify-evenly lg:flex-row justify-center gap-20 pt-10 flex-col items-center w-full px-[5%] lg:px-0">
+  <wrapper class="relative  flex lg:justify-between lg:flex-row justify-center gap-20 pt-10 flex-col items-center w-full px-[5%] lg:px-0">
 
     <!-- this is the left section of why choose us area -->
-    <section class="lg:w-1/2 w-[90%] flex flex-col gap-12 lg:px-32 px-0 justify-center">
+    <section class="lg:w-45 w-full flex flex-col gap-12 lg:pl-32 px-0 justify-center">
       <heading class="font-semibold lg:text-6xl text-4xl text-justify">Why Choose Us?</heading>
       <p class="lf:w-[90%] w-full text-black/50 text-justify ">In our teacher matchmaking endeavor, we're dedicated to close collaboration with our clients. By understanding their goals and challenges deeply, we create tailored marketing campaigns that consistently deliver impressive results.</p>
       <img class="h-54 w-[90%] hidden lg:block" src="./Img/why-choose-us.png" alt="">
     </section>
     <!-- this is the right section of why choose us area -->
-    <section class="flex flex-col gap-8 justify-center">
+    <section class="flex flex-col gap-8 justify-center lg:pr-32">
       <div class="flex gap-4 lg:flex-row flex-col">
         <img class="lg:h-20 lg:w-20 h-16 w-16" src="./Img/ui-buttons/icon1.svg" alt="">
         <span class="my-auto">
@@ -242,23 +220,23 @@ while($row = mysqli_fetch_array($bannerRes)){
       </div>
     </section>
   </wrapper>
-  <img class="h-24 w-36 absolute -bottom-12 right-8 -rotate-3" src="./Img/ui-buttons/Vector 245.svg" alt="">
+  <img class="h-24 w-36 absolute bottom-0 right-8 -rotate-3" src="./Img/ui-buttons/Vector 245.svg" alt="">
   <!-- </div> -->
 </main>
 <!-- ending of why choose us section -->
 
 <!-- starting of the testimonial section -->
 <main class="relative py-20 flex flex-col gap-20 bg-[#f1f1f1] overflow-x-hidden">
-  <section class="font-semibold text-5xl w-4/5 h-auto mx-auto flex justify-between bg-[#f1f1f1]">
+  <section class="font-semibold text-5xl w-[90%] h-auto mx-auto flex justify-between bg-[#f1f1f1]">
     <heading class="">What Our Clients Said About Us</heading>
     <!-- This section is for button area with left and right button -->
     <section class="hidden justify-evenly md:flex">
-      <img draggable="false" class=" leftSwipeArrowtes mx-2" src="./Img/ui-buttons/leftArrow.svg" alt="">
-      <img draggable="false" class=" rightSwipeArrowtes mx-2" src="./Img/ui-buttons/rightArrow.svg" alt="">
+      <img draggable="false" class="leftSwipeArrowTes mx-2 cursor-pointer" src="./Img/ui-buttons/leftArrow.svg" alt="">
+      <img draggable="false" class="rightSwipeArrowTes mx-2 cursor-pointer" src="./Img/ui-buttons/rightArrow.svg" alt="">
     </section>
   </section>
   <!-- this section is for testimonial card area -->
-  <section class="carousel-tes w-[90%] px-[5%] mx-auto grid grid-flow-col lg:overflow-x-hidden overflow-x-auto h-full py-8  gap-8">
+  <section class="carousel-tes w-[90%] mx-auto grid grid-flow-col overflow-x-hidden h-full py-8  gap-8">
     <!-- card section -->
     <div class="duration-500 h-auto group lg:w-96 w-60 bg-white hover:bg-[#3461FF] rounded-2xl p-4 ">
       <heading class="flex gap-4 group-hover:text-white">
@@ -290,6 +268,26 @@ while($row = mysqli_fetch_array($bannerRes)){
       </heading>
       <p class="mt-4 group-hover:text-white">"Finding the perfect teaching opportunity seemed like an overwhelming task until I discovered [Your Teacher Finder Business]. Their personalized approach and dedicated support helped me connect with the ideal teaching position. I can't thank them enough for helping me kickstart my teaching career."</p>
     </div>
+    <div class="h-auto lg:w-96 w-60 bg-white hover:bg-[#3461FF] rounded-2xl p-4 group duration-500">
+      <heading class="flex gap-4 group-hover:text-white">
+        <img class="h-12 w-12 rounded-full" src="./Img/Teacher card photos/user.png " alt="">
+        <div class="flex flex-col gap-1">
+          <span class="text-xl font-medium ">Amelia Joseph</span>
+          <span class="text-black/50 group-hover:text-white">Law Student</span>
+        </div>
+      </heading>
+      <p class="mt-4 group-hover:text-white">"Finding the perfect teaching opportunity seemed like an overwhelming task until I discovered [Your Teacher Finder Business]. Their personalized approach and dedicated support helped me connect with the ideal teaching position. I can't thank them enough for helping me kickstart my teaching career."</p>
+    </div>
+    <div class="duration-500 h-auto group lg:w-96 w-60 bg-white hover:bg-[#3461FF] rounded-2xl p-4 ">
+      <heading class="flex gap-4 group-hover:text-white">
+        <img class="h-12 w-12 rounded-full" src="./Img/Teacher card photos/user.png " alt="">
+        <div class="flex flex-col gap-1">
+          <span class="text-xl font-medium ">Jacob Joshua</span>
+          <span class="">Student</span>
+        </div>
+      </heading>
+      <p class="mt-4 group-hover:text-white">"This is a game-changer in the education field. They not only matched me with an outstanding teaching position but also provided valuable guidance throughout the process. Their commitment to quality education shines through in every step."</p>
+    </div>
   </section>
 </main>
 <!-- ending of the testimonial section -->
@@ -300,9 +298,35 @@ while($row = mysqli_fetch_array($bannerRes)){
     <!-- this is the left section of the faq -->
     <div class="lg:w-1/2 w-full h-full font-medium text-lg ">
 
-      <section class="h-auto w-full border-t-2 border-b-2 py-5 flex justify-between">How does Students platform work? <img src="./Img/ui-buttons/addicon.svg" alt="" class="h-10"></section>
-      <section class="w-full border-t-2 border-b-2 py-5 flex justify-between"> How do you ensure the quality of teachers on your platform? <img src="./Img/ui-buttons/addicon.svg" alt="" class="h-10"></section>
-      <section class="w-full border-t-2 border-b-2 py-5 flex justify-between">What subjects and grade levels are covered on your platform? <img src="./Img/ui-buttons/addicon.svg" alt="" class="h-10"></section>
+      <section class="w-full border-t-2 border-b-2 py-5">
+        <div class="flex justify-between items-center">
+          How does Teacher platform work?
+          <img src="./Img/ui-buttons/addicon.svg" alt="" class="h-10 cursor-pointer" onclick="showFAQText(0)">
+        </div>
+        <div class="hidden-faq-text text-base font-normal">
+          A teacher platform serves as a centralized digital space designed to streamline various aspects of teaching and classroom management. Typically, teachers begin by creating an account and customizing their profile with information such as their teaching subjects, grade levels, and educational background. The platform offers tools for lesson planning, curriculum development, and resource sharing, allowing educators to create engaging and interactive learning experiences for their students. Teachers can upload instructional materials, assign homework and assessments, and track student progress through the platform's intuitive interface. Communication features enable seamless interaction with students, parents, and colleagues, facilitating feedback, collaboration, and support. Additionally, teacher platforms often integrate data analytics and reporting tools, empowering educators to analyze student performance and tailor their instruction to meet individual needs effectively. Ultimately, teacher platforms streamline administrative tasks, enhance instructional quality, and foster a collaborative learning environment conducive to student success.
+        </div>
+      </section>
+
+      <section class="w-full border-t-2 border-b-2 py-5">
+        <div class="flex justify-between">
+          How do you ensure the quality of teachers on your platform?
+          <img src="./Img/ui-buttons/addicon.svg" alt="" class="h-10 cursor-pointer" onclick="showFAQText(1)">
+        </div>
+        <div class="hidden-faq-text text-base font-normal">
+          Ensuring the quality of teachers on our platform is a top priority, and we employ several strategies to maintain high standards of expertise and professionalism. Firstly, we carefully vet each teacher before they are approved to join the platform, conducting thorough background checks and verifying their educational qualifications and teaching experience. Additionally, we may require teachers to undergo training or certification programs to ensure they are equipped with the necessary skills and knowledge to effectively instruct students. Once on board, we continuously monitor teacher performance through student feedback, peer evaluations, and periodic assessments of teaching effectiveness. We also provide ongoing professional development opportunities to help teachers stay abreast of best practices and innovative instructional techniques. By implementing these rigorous vetting processes and ongoing quality assurance measures, we strive to uphold the excellence of our teaching community and deliver a superior learning experience for students.
+        </div>
+      </section>
+
+      <section class="w-full border-t-2 border-b-2 py-5">
+        <div class="flex justify-between">
+          How to register an teacher?
+          <img src="./Img/ui-buttons/addicon.svg" alt="" class="h-10 cursor-pointer" onclick="showFAQText(2)">
+        </div>
+        <div class="hidden-faq-text text-base font-normal">
+          Registering a teacher on our platform is a straightforward process designed to ensure efficiency and accuracy. Teachers interested in joining our community simply navigate to the contact page on our platform's website. There, they are prompted to fill out a contact form, providing essential information such as their full name, email address, teaching credentials, educational background, and teaching experience. Additionally, they may be asked to upload relevant documents, such as proof of certification and identification. Once the registration form is completed and submitted, our team reviews the information provided to verify the teacher's qualifications and suitability for the platform. Upon approval, the teacher receives a confirmation email with login credentials, granting them access to their personalized dashboard and the full range of features and resources available on our platform. Our registration process is designed to be user-friendly, efficient, and transparent, ensuring that qualified teachers can quickly and easily join our vibrant teaching community.
+        </div>
+      </section>
     </div>
     <!-- this is the right section of the faq -->
     <div class="lg:w-1/2 w-full  h-full flex text-left gap-8 flex-col  lg:pl-32">
@@ -454,6 +478,7 @@ while($row = mysqli_fetch_array($bannerRes)){
     <span>Privacy Policy</span>
   </div>
 </section>
+<script src="./js/carousel.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script> -->
 <?php
 include("footer.php");

@@ -7,7 +7,7 @@ if(isset($_SESSION['teacherId'])){
 
 ?>
 
-<nav class="flex justify-between h-16 items-center bg-white fixed z-30 top-0 left-0 w-full px-10 md:px-8 lg:px-20 shadow-sm">
+<nav class="flex justify-between h-20 items-center bg-white fixed z-30 top-0 left-0 w-full px-10 md:px-8 lg:px-20 shadow-sm">
   <!-- logoArea -->
   <div class="w-48">
     <!-- original mentor mosaic h-12 w-20 -->

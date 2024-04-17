@@ -371,7 +371,7 @@ $res2 = mysqli_query($connection, $query2);
     </div>
     <!--@ right side image -->
     <div class="w-2/5">
-        <img src=" ./Img/Layer 12.svg" alt="" class="fixed top-0 right-0 h-screen -z-10 ">
+        <img src=" ./Img/Layer 12.svg" alt="" class="fixed top-0 right-0 h-screen -z-10 mt-20">
     </div>
 </div>
 <?php
