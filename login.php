@@ -2,6 +2,13 @@
 include("connection.php");
 include("header.php");
 include("nav.php");
+if(isset($_REQUEST['email'])){
+    $user=$_REQUEST['email'];
+}
+if(isset($_REQUEST['password'])){
+    $password=$_REQUEST['password'];
+}
+
 /*
 *admin login info
 *--username: admin@gmail.com

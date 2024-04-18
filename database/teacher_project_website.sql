@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2024 at 07:48 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Apr 18, 2024 at 07:23 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -99,12 +99,10 @@ CREATE TABLE `teacher-bannerimg-table` (
 --
 
 INSERT INTO `teacher-bannerimg-table` (`id`, `teacherId`, `bannerImgPath`) VALUES
-(1, 7, './uploads/2138237510.png'),
-(3, 7, './uploads/636397738.jpg'),
-(5, 7, './uploads/87900670.png'),
-(6, 7, './uploads/1421904199.png'),
-(9, 7, './uploads/1310434713.png'),
-(10, 7, './uploads/1477186454.png');
+(1, 7, './Img/banner/banner 2.png'),
+(3, 7, './Img/banner/banner 3.png'),
+(5, 7, './Img/banner/banner 1.png'),
+(9, 1, './Img/banner/banner 4.png');
 
 -- --------------------------------------------------------
 
@@ -147,7 +145,8 @@ INSERT INTO `teacher-cls-subj` (`id`, `teacherId`, `classId`, `subjectId`) VALUE
 (21, 6, 3, 2),
 (22, 7, 5, 6),
 (23, 7, 1, 6),
-(24, 7, 4, 6);
+(24, 7, 4, 6),
+(26, 9, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -205,7 +204,8 @@ INSERT INTO `teacher-table` (`id`, `firstName`, `lastName`, `phoneNumber`, `emai
 (4, 'Aashish', 'Kumar Choudhury', '1253467890', 'demo4@gmail.com', 'Male', '23', '1', 'MacBook Owner', 'kestopur', 'Not Provided', 'Baguihati', 'Westbengal'),
 (5, 'Arnab', 'Debnath', '1235467890', 'demo5@gmail.com', 'Male', '23', '1', 'Chief Executive Officer', 'baguihati', 'Not Provided', 'Kolkata', 'West Bengal'),
 (6, 'Swarnadip', 'Dasgupta', '1209345678', 'demo6@gmail.com', 'Male', '23', '1', '10+2', 'naihati', 'Not Provided', '24 Parganas(North)', 'West Bengal'),
-(7, 'Akash', 'Doodeja', '1245367890', 'demo7@gmail.com', 'Male', '22', '3', 'M.Sc (Physics)', 'beldanga', 'Not Provided', 'Murshidabad', 'West Bengal');
+(7, 'Akash', 'Doodeja', '1245367890', 'demo7@gmail.com', 'Male', '22', '3', 'M.Sc (Physics)', 'beldanga', 'Not Provided', 'Murshidabad', 'West Bengal'),
+(9, 'Debankur', 'Das', '9234567891', 'giganigga@gmail.com', 'Male', '19', 'Not Yet', 'Sample', 'locality', '', 'Address', 'State');
 
 -- --------------------------------------------------------
 
@@ -257,7 +257,8 @@ INSERT INTO `user` (`id`, `teacherId`, `username`, `password`, `role`) VALUES
 (15, 5, 'demo5@gmail.com', '95346415f1f5933a78386d1759d2ef22', 'Teacher'),
 (16, 6, 'demo6@gmail.com', '7aeee81cdd1d43d0f1ebf938866831e3', 'Teacher'),
 (17, 7, 'demo7@gmail.com', '5961ba6c436f1eaa1ccf665316308b6a', 'Teacher'),
-(18, 8, 'demo8@gmail.com', '58857ed08cd530984d1c4156b0e8022f', 'Teacher');
+(18, 8, 'demo8@gmail.com', '58857ed08cd530984d1c4156b0e8022f', 'Teacher'),
+(19, 9, 'giganigga@gmail.com', 'eca8bfc5e06b01a2e4b369259ac048fb', 'Teacher');
 
 --
 -- Indexes for dumped tables
@@ -349,7 +350,7 @@ ALTER TABLE `teacher-bannerimg-table`
 -- AUTO_INCREMENT for table `teacher-cls-subj`
 --
 ALTER TABLE `teacher-cls-subj`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `teacher-profileimage-table`
@@ -361,7 +362,7 @@ ALTER TABLE `teacher-profileimage-table`
 -- AUTO_INCREMENT for table `teacher-table`
 --
 ALTER TABLE `teacher-table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `temp-teachertable`
@@ -373,7 +374,7 @@ ALTER TABLE `temp-teachertable`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

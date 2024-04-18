@@ -29,6 +29,9 @@ $profilequery = "SELECT * FROM `teacher-profileimage-table` WHERE `teacherId` = 
 $profileRes = mysqli_query($connection,$profilequery);
 ?>
 
+    <link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+   
 <profile class="bg-[#F1F1F1] relative overflow-x-hidden">
     <!-- main div -->
     <div class="h-auto w-full mt-[4.1rem] flex flex-col gap-12 lg:gap-0 lg:flex-row justify-center pt-12 border-b-2 border-black/30 py-16">
@@ -180,9 +183,15 @@ $profileRes = mysqli_query($connection,$profilequery);
                 <?php 
                 if($row['mapLink']!="Not Provided"){
                 ?>
+                
+
                 <a target="_blank"  href="<?php echo $row['mapLink'];?>" class="w-full capitalize font-medium text-blue-500">
                     Show location <i class="fa-solid fa-location-dot"></i>
                 </a>
+                <div id="panel">
+                  <input id="address" type="textbox" value="<?php echo $row['mapLink'];?>">
+                  <input type="button" value="Show location" onclick="codeAddress()">
+                </div>
                 <?php 
                 }
                 ?>

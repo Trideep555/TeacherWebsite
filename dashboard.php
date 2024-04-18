@@ -53,7 +53,7 @@ if(!isset($_SESSION['admin'])){
 
         <?php
         // echo $_SESSION['admin']; 
-        $query = "SELECT * FROM `temp-teachertable` ORDER BY `id`";
+        $query = "SELECT * FROM `teacher-table` ORDER BY `id`";
         $res = mysqli_query($connection,$query);
         if(mysqli_num_rows($res)==0){
             ?>
@@ -92,7 +92,7 @@ if(!isset($_SESSION['admin'])){
             <td class="border-2 border-black/50 text-center px-4 py-1"><?php echo $rowarr['qualification']; ?></td>
             <td class="border-2 border-black/50 text-center px-4 py-1"><?php echo $rowarr['locality']; ?></td>
             <td class="h-12 w-28 border-2 border-black/50 text-center px-4 overflow-x-hidden overflow-y-auto"><div class="overflow-auto h-12"><?php echo $rowarr['address']; ?></div></td>
-            <td class="border-2 border-black/50 text-center px-4 py-1"><a class="hover:bg-emerald-500 bg-green-500 px-4 py-1 text-white font-medium rounded-md" href="updateChanges.php?teacherChangeId=<?php echo $rowarr['teacherId']; ?>">Accept</a> | <a class="hover:bg-red-500 bg-rose-500 px-4 py-1 text-white font-medium rounded-md" href="rejectChanges.php?teacherChangeId=<?php echo $rowarr['teacherId']; ?>">Reject</a></td>
+            <td class="border-2 border-black/50 text-center px-4 py-1"><a class="hover:bg-emerald-500 bg-green-500 px-4 py-1 text-white font-medium rounded-md" href="updateChanges.php?teacherChangeId=<?php echo $rowarr['id']; ?>">Accept</a> | <a class="hover:bg-red-500 bg-rose-500 px-4 py-1 text-white font-medium rounded-md" href="rejectChanges.php?teacherChangeId=<?php echo $rowarr['id']; ?>">Reject</a></td>
         </tr>
         </tbody>
         <?php

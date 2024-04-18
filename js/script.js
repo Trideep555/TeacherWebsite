@@ -1,3 +1,4 @@
+
 const navTabs = document.querySelector("#navTabs");
 function menuToggleBtn(e) {
   if (e.classList.contains("fa-bars")) {
@@ -704,16 +705,3 @@ $(document).ready(() => {
 
 
 });
-
-const hiddenFAQText=document.getElementsByClassName("hidden-faq-text");
-function showFAQText(x)
-{
-  if(hiddenFAQText[x].style.height=="0px" || hiddenFAQText[x].style.height==0)
-  {
-    hiddenFAQText[x].style.height="300px";
-  }
-  else
-  {
-    hiddenFAQText[x].style.height="0px";
-  }
-}
