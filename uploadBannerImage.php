@@ -31,7 +31,5 @@ if($_FILES['banner-upload']['name']!=''){
 
     
     
-}
-
-
+} 
 ?>
