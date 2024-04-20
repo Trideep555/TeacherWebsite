@@ -1,36 +1,34 @@
 <?php
-include("header.php");
-include("nav.php");
-include("connection.php");
-$sessionTeacher = false;
-$teacherId = $_REQUEST['teachSuperId'];
+  include("header.php");
+  include("nav.php");
+  include("connection.php");
+  $sessionTeacher = false;
+  $teacherId = $_REQUEST['teachSuperId'];
 ?>
-<!-- <script>console.log('eyyyyy<?php echo $_SESSION['teacherId'];?>')</script> -->
+<?php echo $_SESSION['teacherId']; ?>
 <?php
+  if (isset($_SESSION['teacherId'])) {
+      $sessionTeacherId = $_SESSION['teacherId'];
+      if($teacherId==$sessionTeacherId){
+          $sessionTeacher=true;
+      }
+  }
 
+  $query = "SELECT * FROM `teacher-table` WHERE `id` = '$teacherId'";
+  $res = mysqli_query($connection, $query);
+  // if (mysqli_num_rows($res) == 0) {
+  //     @header("location:NoTeacher.php?");
+  //     exit();
+  // }
+  $row = mysqli_fetch_array($res);
+  $Fullname = $row['firstName'] . " " . $row['lastName'];
 
-if (isset($_SESSION['teacherId'])) {
-    $sessionTeacherId = $_SESSION['teacherId'];
-    if($teacherId==$sessionTeacherId){
-        $sessionTeacher=true;
-    }
-}
-
-$query = "SELECT * FROM `teacher-table` WHERE `id` = '$teacherId'";
-$res = mysqli_query($connection, $query);
-// if (mysqli_num_rows($res) == 0) {
-//     @header("location:NoTeacher.php?");
-//     exit();
-// }
-$row = mysqli_fetch_array($res);
-$Fullname = $row['firstName'] . " " . $row['lastName'];
-
-$profilequery = "SELECT * FROM `teacher-profileimage-table` WHERE `teacherId` = '$teacherId'";
-$profileRes = mysqli_query($connection,$profilequery);
+  $profilequery = "SELECT * FROM `teacher-profileimage-table` WHERE `teacherId` = '$teacherId'";
+  $profileRes = mysqli_query($connection,$profilequery);
 ?>
 
-    <link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
    
 <profile class="bg-[#F1F1F1] relative overflow-x-hidden">
     <!-- main div -->
@@ -240,34 +238,29 @@ $profileRes = mysqli_query($connection,$profilequery);
         </div>
     </section>
 <!-- gallery area -->
-<?php 
-$banners = array("./Img/banner/banner 1.png","./Img/banner/banner 2.png","./Img/banner/banner 3.png","./Img/banner/banner 1.png","./Img/banner/banner 2.png","./Img/banner/banner 3.png");
-$bannerIDs = array();
-$bannerSql = "SELECT * FROM `teacher-bannerimg-table` WHERE `teacherId` = '$teacherId'";
-$bannerRes = mysqli_query($connection,$bannerSql);
-$i = 0;
-if(mysqli_num_rows($bannerRes)>0){
-    while($bannerArr = mysqli_fetch_array($bannerRes)){
-        $banners[$i] = strval($bannerArr['bannerImgPath']);
-        // echo $bannerArr['id'];
-        $bannerIDs[$i] = strval($bannerArr['id']);
-        $i++;
-    }
-}
-
+<?php
+  $bannerQuery = "SELECT bannerImgPath,id FROM `teacher-bannerimg-table` WHERE `teacherId` = '$teacherId'";
+  $bannerPath = mysqli_query($connection,$bannerQuery);
+  $paths=array_fill(0,6,'./Img/placeholder.png');
+  $bannerIDs=array_fill(0,6,'-1');
+  $i=0;
+  while($path = mysqli_fetch_array($bannerPath))
+  {
+    $paths[$i]=$path[0];
+    $bannerIDs[$i]=$path[1];
+    $i++;
+  }
 ?>
 <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
   <div class="-m-1 flex flex-col sm:flex-row flex-wrap md:-m-2">
     <div class="flex w-full sm:w-1/2 flex-wrap">
       <div class="relative h-[15rem] w-screen sm:w-1/2 p-1 md:p-2">
-        <img
-          alt="gallery"
-          class="block h-full w-full rounded-lg object-cover object-center"
-          src="<?php echo $banners[0];?>" />
-          <?php 
-          if($sessionTeacher){
-          ?>
-          <div data-path = "<?php echo $banners[0];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-bannerId = "<?php echo $bannerIDs[0];?>" >
+        <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center" src="<?php echo $paths[0];?>" />
+        <?php 
+          if($sessionTeacher)
+          {
+        ?>
+          <div  style="display: <?php echo ($bannerIDs[0]!="-1")?'flex':'hidden'; ?>;" data-path = "<?php echo $paths[0];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center" data-bannerId = "<?php echo $bannerIDs[0];?>">
           <i class="fa-solid fa-trash"></i>
           </div>
           <?php 
@@ -278,11 +271,11 @@ if(mysqli_num_rows($bannerRes)>0){
         <img
           alt="gallery"
           class="block h-full w-full rounded-lg object-cover object-center"
-          src="<?php echo $banners[1];?>" />
+          src="<?php echo $paths[1];?>" />
           <?php 
           if($sessionTeacher){
           ?>
-          <div data-path = "<?php echo $banners[1];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-bannerId = "<?php echo $bannerIDs[1];?>" >
+          <div data-path = "<?php echo $paths[1];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-bannerId = "<?php echo $bannerIDs[1];?>" >
           <i class="fa-solid fa-trash"></i>
           </div>
           <?php 
@@ -293,11 +286,11 @@ if(mysqli_num_rows($bannerRes)>0){
         <img
           alt="gallery"
           class="block h-full w-full rounded-lg object-cover object-center"
-          src="<?php echo $banners[2];?>" />
+          src="<?php echo $paths[2];?>" />
           <?php 
           if($sessionTeacher){
           ?>
-          <div data-path = "<?php echo $banners[2];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-bannerId = "<?php echo $bannerIDs[2];?>" >
+          <div data-path = "<?php echo $paths[2];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-bannerId = "<?php echo $bannerIDs[2];?>" >
           <i class="fa-solid fa-trash"></i>
           </div>
           <?php 
@@ -310,11 +303,11 @@ if(mysqli_num_rows($bannerRes)>0){
         <img
           alt="gallery"
           class="block h-full w-full rounded-lg object-cover object-center"
-          src="<?php echo $banners[3];?>" />
+          src="<?php echo $paths[3];?>" />
           <?php 
           if($sessionTeacher){
           ?>
-          <div data-path = "<?php echo $banners[3];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-BannerId = "<?php echo $bannerIDs[3];?>" >
+          <div data-path = "<?php echo $paths[3];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-BannerId = "<?php echo $bannerIDs[3];?>" >
           <i class="fa-solid fa-trash"></i>
           </div>
           <?php 
@@ -325,11 +318,11 @@ if(mysqli_num_rows($bannerRes)>0){
         <img
           alt="gallery"
           class="block h-full w-full rounded-lg object-cover object-center"
-          src="<?php echo $banners[4];?>" />
+          src="<?php echo $paths[4];?>" />
           <?php 
           if($sessionTeacher){
           ?>
-          <div data-path = "<?php echo $banners[4];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-BannerId = "<?php echo $bannerIDs[4];?>" >
+          <div data-path = "<?php echo $paths[4];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center " data-BannerId = "<?php echo $bannerIDs[4];?>" >
           <i class="fa-solid fa-trash"></i>
           </div>
           <?php 
@@ -340,11 +333,11 @@ if(mysqli_num_rows($bannerRes)>0){
         <img
           alt="gallery"
           class="block h-full w-full rounded-lg object-cover object-center"
-          src="<?php echo $banners[5];?>" />
+          src="<?php echo $paths[5];?>" />
           <?php 
           if($sessionTeacher){
           ?>
-          <div data-bannerid = "<?php echo $bannerIDs[5];?>" data-path = "<?php echo $banners[5];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center "   >
+          <div data-bannerid = "<?php echo $bannerIDs[5];?>" data-path = "<?php echo $paths[5];?>" class="deleteBanner cursor-pointer bg-black/30 absolute bottom-4 right-4 h-8 w-8 rounded-lg text-white flex justify-center items-center "   >
           <i class="fa-solid fa-trash"></i>
           </div>
           <?php 

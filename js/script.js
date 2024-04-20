@@ -682,6 +682,21 @@ $(document).ready(() => {
   //banner upload
   $('#banner-upload').on("change",(e)=>{
     if(e.target.files.length>0){
+      if(e.target.files[0].size>500000)
+      {
+        popUp("Banner size must be less than or equal to 500KB");
+        return;
+      }
+      var img=new Image();
+      img.src=URL.createObjectURL(e.target.files[0]);
+      img.onload = () =>
+      {
+        if(img.width%32!=0 || img.height%9!=0)
+        {
+          popUp("Banner must be 32:9 aspect ratio");
+          return;
+        }
+      }
       let formData2 = new FormData();
       formData2.append('banner-upload',e.target.files[0]);
       $.ajax({

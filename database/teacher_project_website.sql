@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2024 at 07:26 PM
+-- Generation Time: Apr 20, 2024 at 01:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -344,7 +344,7 @@ ALTER TABLE `subject-table`
 -- AUTO_INCREMENT for table `teacher-bannerimg-table`
 --
 ALTER TABLE `teacher-bannerimg-table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `teacher-cls-subj`
