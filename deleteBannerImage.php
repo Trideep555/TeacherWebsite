@@ -1,24 +1,16 @@
 <?php 
-include("connection.php");
-session_start();
-if (isset($_SESSION["teacherId"])) {
-    $teacherId = $_SESSION['teacherId'];
-    $bannerId = $_REQUEST['bannerId'];
-    
-    $path = $_REQUEST['path'];
-    $query = "SELECT * FROM `teacher-bannerimg-table` WHERE `id` = '$bannerId' AND `teacherId` = '$teacherId' ";
-    $res = mysqli_query($connection,$query);
-    if (mysqli_num_rows($res) > 0) {
-        if(unlink($path)){
-            $query = "DELETE FROM `teacher-bannerimg-table` WHERE `id` = $bannerId";
-            $res = mysqli_query($connection,$query);
-            echo "Banner deleted";
-        }
-        else{
-            echo "Something went wrong!";
-        }
-
+    include("connection.php");
+    session_start();
+    include("adminCheck.php");
+    $id = $_REQUEST['id'];
+    $query = "SELECT bannerPath FROM `banner-image-table` WHERE `id` = '$id'";
+    $path = mysqli_fetch_array(mysqli_query($connection,$query))[0];
+    if($path != NULL)
+    {
+        unlink($path);
+        $query="UPDATE `banner-image-table` SET `bannerPath` = NULL WHERE `id` = $id;
+                UPDATE `banner-image-table` SET `bannerActivity` = 0 WHERE `id` = $id";
+        $res = mysqli_multi_query($connection,$query);
     }
-}
-
+    @header("location:adminDashboard.php");
 ?>

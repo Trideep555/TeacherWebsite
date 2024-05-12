@@ -1,20 +1,14 @@
 <?php 
     include("connection.php");
     session_start();
+    include("adminCheck.php");
     if($_FILES['banner-upload']['name']!='')
     {
         $fileName = $_FILES['banner-upload']['name'];
-        $teacherId = $_SESSION['teacherId'];
+        $id = $_REQUEST['id'];
         $extension = pathinfo($fileName,PATHINFO_EXTENSION);
         list($width, $height)=getimagesize($_FILES['banner-upload']['tmp_name']);
-
-        $checkSQL = "SELECT * FROM `teacher-bannerimg-table` WHERE `teacherId` = '$teacherId'";
-        $checkRes = mysqli_query($connection,$checkSQL);
-        if(mysqli_num_rows($checkRes)>=6)
-        {
-            echo "Only 6 banner allowed\nPlease remove first.";
-        }
-        else if($width%32!=0 or $height%9!=0)
+        if($width%32!=0 or $height%9!=0)
         {
             echo "Banner image aspect ratio must be 32:9";
         }
@@ -28,9 +22,9 @@
             $path = "./Img/banner/". $new_name;
             if(move_uploaded_file($_FILES['banner-upload']['tmp_name'],$path))
             {
-                $query = "INSERT INTO `teacher-bannerimg-table` SET `teacherId` = '$teacherId',`bannerImgPath` = '$path'";    
+                $query = "UPDATE `banner-image-table` SET `bannerPath` = '$path' WHERE `id` = '$id'";    
                 $res = mysqli_query($connection,$query);
-                echo "Banner uploaded successfully";
+                echo "Banner Uploaded Successfully";
             }
             else
             {

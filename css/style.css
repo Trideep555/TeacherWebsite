@@ -1598,6 +1598,11 @@ video {
   padding-right: 3rem;
 }
 
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -2167,6 +2172,13 @@ input::-webkit-inner-spin-button {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+
+@media (max-width: 400px){
+  .vsm\:text-sm
+  {
+    font-size: 0.75rem;
+  }
+}
 @media (min-width: 640px){
   .sm\:mx-0{
     margin-left: 0px;
@@ -2358,8 +2370,16 @@ input::-webkit-inner-spin-button {
     padding-left: 5rem;
   }
 
+  .md\:pr-20{
+    padding-right: 5rem;
+  }
+
   .md\:pt-8{
     padding-top: 2rem;
+  }
+
+  .md\:text-xl{
+    font-size: 1.25rem;
   }
 
   .md\:text-7xl{
@@ -2607,6 +2627,16 @@ input::-webkit-inner-spin-button {
     text-align: left;
   }
 
+  .lg\:text-lg
+  {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl{
+    font-size: 1.5rem;
+  }
+
   .lg\:text-6xl{
     font-size: 3.75rem;
     line-height: 1;
@@ -2643,4 +2673,9 @@ input::-webkit-inner-spin-button {
   transform: rotate(-90deg);
   left: -50px;
   top: 50vh;
+}
+
+.scroll-smooth
+{
+  scroll-behavior: smooth;
 }

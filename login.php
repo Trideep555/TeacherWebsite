@@ -1,21 +1,15 @@
 <?php
-include("connection.php");
-include("header.php");
-include("nav.php");
-if(isset($_REQUEST['email'])){
-    $user=$_REQUEST['email'];
-}
-if(isset($_REQUEST['password'])){
-    $password=$_REQUEST['password'];
-}
-
-/*
-*admin login info
-*--username: admin@gmail.com
-*--password: admin@123
-*/
-
-
+    include("head.php");
+    include("nav.php");
+    if(isset($_SESSION['admin']))
+    {
+        @header("location: adminDashboard.php");
+    }
+    /*
+    *admin login info
+    *--username: admin@gmail.com
+    *--password: admin@1234
+    */
 ?>
 <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
     <div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -40,7 +34,7 @@ if(isset($_REQUEST['password'])){
                             <label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                         </div>
                         <div class="relative">
-                            <button id="Signin-btn" class="bg-blue-500 text-white rounded-md px-2 py-1">Sign in</button>
+                            <button id="signin-button" class="bg-blue-500 text-white rounded-md px-2 py-1">Sign in</button>
                         </div>
                     </div>
                 </div>
@@ -49,5 +43,6 @@ if(isset($_REQUEST['password'])){
     </div>
 </div>
 <?php
-include("footer.php");
+    include("foot.php");
 ?>
+<script src="./js/login.js"></script>
