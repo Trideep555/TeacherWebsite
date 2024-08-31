@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2024 at 07:50 AM
+-- Generation Time: Aug 31, 2024 at 09:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -178,7 +178,20 @@ CREATE TABLE `teacher-cls-subj` (
 --
 
 INSERT INTO `teacher-cls-subj` (`id`, `teacherId`, `classId`, `subjectId`) VALUES
-(207, 1, 0, 0);
+(246, 1, 13, 13),
+(247, 1, 13, 14),
+(248, 1, 13, 15),
+(249, 1, 13, 16),
+(250, 1, 13, 17),
+(251, 1, 13, 18),
+(252, 1, 13, 19),
+(253, 1, 13, 20),
+(254, 1, 13, 21),
+(255, 1, 13, 22),
+(256, 1, 9, 10),
+(257, 1, 10, 10),
+(258, 1, 11, 10),
+(259, 1, 12, 10);
 
 -- --------------------------------------------------------
 
@@ -210,7 +223,7 @@ CREATE TABLE `teacher-table` (
 --
 
 INSERT INTO `teacher-table` (`id`, `firstName`, `lastName`, `phoneNumber`, `email`, `gender`, `age`, `experience`, `mode`, `locality`, `mapLink`, `address`, `state`, `about`, `activity`, `role`) VALUES
-(1, 'blobTech', '', '9830184239', '', '', '', '', 'Online/Offline', 'Desh Bandhu Nagar', '', 'EB-1/4, Baguihati, Kolkata 700059', 'West Bengal', '', 1, 'Institute');
+(1, 'blobTech', '', '9830184239', '', '', '', '', 'Online/Offline', 'Desh Bandhu Nagar', '', 'EB-1/4, Baguihati, Kolkata 700059', 'West Bengal', 'Dive into the world of programming excellence with our comprehensive courses, designed to empower beginners and professionals alike. From Python to Java, our platform offers the pinnacle of instructional content, ensuring you stay ahead in todayssssaaaawwwwmmmmwwwwffff', 1, 'Institute');
 
 -- --------------------------------------------------------
 
@@ -316,7 +329,7 @@ ALTER TABLE `subject-table`
 -- AUTO_INCREMENT for table `teacher-cls-subj`
 --
 ALTER TABLE `teacher-cls-subj`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=260;
 
 --
 -- AUTO_INCREMENT for table `teacher-table`
